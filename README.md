@@ -2,12 +2,13 @@
 
 ## 🚀 Requirements
 
-Two packages are required for other plugins:
-    - (FZF)[https://github.com/junegunn/fzf.vim]
-    - (COC)[https://github.com/neoclide/coc.nvim]
+Two packages are required for other plugins:\
+- [FZF](https://github.com/junegunn/fzf.vim)
+- [COC](https://github.com/neoclide/coc.nvim)
 
 ## ⚒️ Plugins
 | Name                                  | Url                                                    | Category    |
+|---------------------------------------|--------------------------------------------------------|-------------|
 | `preservim/nerdtree`                  | https://github.com/preservim/nerdtree                  |             |
 | `sheerun/vim-polyglot`                | https://github.com/sheerun/vim-polyglot                |             |
 | `junegunn/vim-easy-align`             | https://github.com/junegunn/vim-easy-align             |             |
@@ -25,6 +26,7 @@ Two packages are required for other plugins:
 
 ### COC Plugins
 | Name           | Url                                      |
+|----------------|------------------------------------------|
 | `coc-pairs`    | https://github.com/neoclide/coc-pairs    |
 | `coc-json`     | https://github.com/neoclide/coc-json     |
 | `coc-phpls`    | https://github.com/marlonfan/coc-phpls   |
