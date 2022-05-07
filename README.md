@@ -41,58 +41,33 @@ https://github.com/drewtempelmeyer/palenight.vim
 
 > 💡 The leader key is mapped to 'SPACE'
 
-### Terminal
-
-`SPACE` + `ot` => Horizontal terminal split
-`SPACE` + `oT` => Vertical terminal split 
-
-### Basic
-
-**Buffer Management:**
-
-`SPACE` + `SPACE` => Search files inside the project directory
-`SPACE` + `,`     => Search & switch buffer
-
- 
-**Saving:**
-
-`SPACE` + `w` => Fast saving 
-
-
-**Split:**
-
-`SPACE` + `ss` => Split editor horizontally
-`SPACE` + `sv` => Split editor vertically
-
-**Split navigation:**
-
-`CTRL` + `h` => Move navigation focus to left 
-`CTRL` + `j` => Move navigation focus up
-`CTRL` + `k` => Move navigation focus down
-`CTRL` + `l` => Move navigation focus to right
-
-
-**Move selected lines:**
-
-> Available in the visual mode
-
-`K` => Move selected line up 
-`J` => Move selected line down
-
-### EasyAlign
-
-`SPACE` + `fa`
-
-
-### NerdTree
-`SPACE` + `op` => Toggle sidebar folder tree
-
-### Git (fugitive)
-
-`SPACE` + `gg` => Git
-`SPACE` + `gf` => Git fetch
-`SPACE` + `gp` => Git pull
-`SPACE` + `gP` => Git push
+| Category            | Command           | Description                                            |
+| ----------          | ---------         | -------------                                          |
+| Terminal            | `SPACE` + `ot`    | Horizontal terminal split                              |
+| Terminal            | `SPACE` + `oT`    | Vertical terminal split                                |
+|                     |                   |                                                        |
+| Buffer management   | `SPACE` + `SPACE` | Search files inside the project directory              |
+| Buffer management   | `SPACE` + `,`     | Search & switch buffer                                 |
+| Saving              | `SPACE` + `w`     | Fast saving                                            |
+|                     |                   |                                                        |
+| Split               | `SPACE` + `ss`    | Split editor horizontally                              |
+| Split               | `SPACE` + `sv`    | Split editor vertically                                |
+|                     |                   |                                                        |
+| Split navigation    | `CTRL` + `h`      | Move navigation focus to left                          |
+| Split navigation    | `CTRL` + `j`      | Move navigation focus up                               |
+| Split navigation    | `CTRL` + `k`      | Move navigation focus down                             |
+| Split navigation    | `CTRL` + `l`      | Move navigation focus to right                         |
+| Move selected lines | `K`               | Move selected line up\> Available in the visual mode   |
+| Move selected lines | `J`               | Move selected line down\> Available in the visual mode |
+|                     |                   |                                                        |
+| EasyAlign           | `SPACE` + `fa`    |                                                        |
+|                     |                   |                                                        |
+| NerdTree            | `SPACE` + `op`    | Toggle sidebar folder tree                             |
+|                     |                   |                                                        |
+| Git (fugitive)      | `SPACE` + `gg`    | Git                                                    |
+| Git (fugitive)      | `SPACE` + `gf`    | Git fetch                                              |
+| Git (fugitive)      | `SPACE` + `gp`    | Git pull                                               |
+| Git (fugitive)      | `SPACE` + `gP`    | Git push                                               |
 
 
 ## 🌟 Tailwindcss Intellisense
