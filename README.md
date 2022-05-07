@@ -37,18 +37,17 @@ Two packages are required for other plugins:\
 ## 🌙 Theme
 https://github.com/drewtempelmeyer/palenight.vim
 
-## ⌨️  Commandsc
-
+## ⌨️ Commands
 
 ## 🌟 Tailwindcss Intellisense
 
-used vim plugin: https://github.com/rodrigore/coc-tailwind-intellisense
-for more tailwindcss configs check out the official docs: https://github.com/tailwindlabs/tailwindcss-intellisense
+Used vim plugin: https://github.com/rodrigore/coc-tailwind-intellisense\
+For more tailwindcss configs check out the official docs: https://github.com/tailwindlabs/tailwindcss-intellisense
 
-> 💡 note: for tailwindcss v3 the intellisense has a bug.
+> 💡 Note: for tailwindcss v3 the intellisense has a bug.\
 > workaround for the lsp: 
 
-issue: https://github.com/rodrigore/coc-tailwind-intellisense/issues/29
+**Issue:** https://github.com/rodrigore/coc-tailwind-intellisense/issues/29
 
 ```bash
 npm i -g @tailwindcss/language-server
