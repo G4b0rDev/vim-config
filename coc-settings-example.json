@@ -1,0 +1,51 @@
+{
+    "intelephense.licenceKey": "",
+    "intelephense.telemetry.enabled": false,
+    "tailwindCSS.enable": true,
+    "tailwindCSS.includeLanguages": {
+        "vue": "vue",
+        "css": "css",
+        "blade": "blade"
+    },
+    "tailwindCSS.emmetCompletions": true,
+
+    "languageserver": {
+        "tailwind-lsp": {
+              "command": "tailwindcss-language-server",
+              "args": ["--stdio"],
+              "filetypes": [
+                    "javascript",
+                    "typescript",
+                    "html",
+                    "blade",
+                    "css"
+              ],
+              "rootPatterns": [
+                    "tailwind.config.js",
+                    "tailwind.config.ts",
+                    "postcss.config.js",
+                    "postcss.config.ts",
+                    "package.json",
+                    "node_modules",
+                    ".git"
+              ],
+              "settings": {
+                    "tailwindCSS": {
+                      "validate": true,
+                      "lint": {
+                            "cssConflict": "warning",
+                            "invalidApply": "error",
+                            "invalidScreen": "error",
+                            "invalidVariant": "error",
+                            "invalidConfigPath": "error",
+                            "invalidTailwindDirective": "error",
+                            "recommendedVariantOrder": "warning"
+                      },
+                      "classAttributes": ["class", "className"],
+                      "experimental": {}
+                }
+            }
+        }
+    }
+
+}
