@@ -5,7 +5,6 @@
 set background=dark
 colorscheme palenight
 
-
 let g:lightline = { 'colorscheme': 'palenight' }
 let g:airline_theme = 'palenight'
 
@@ -19,4 +18,10 @@ endif
 " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
 if (has("termguicolors"))
   set termguicolors
+endif
+
+if exists('+termguicolors')
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    set termguicolors
 endif
