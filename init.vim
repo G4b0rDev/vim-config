@@ -23,7 +23,8 @@ if &term =~ '256color'
 endif
 
 " Set line numbers
-set nu
+" set nu
+set rnu
 
 " Set split below
 set splitbelow
