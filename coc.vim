@@ -6,7 +6,10 @@ let g:coc_global_extensions = [
     \ 'coc-phpls',
     \ 'coc-go',
     \ 'coc-snippets',
-    \ 'coc-blade']
+    \ 'coc-blade',
+    \ 'coc-tsserver',
+    \ 'coc-css',
+    \ 'coc-html']
 
 " Use tab for trigger completion with charachters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
