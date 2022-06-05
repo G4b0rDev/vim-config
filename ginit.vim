@@ -1,1 +1,1 @@
-GuiFont! Hack\ Nerd\ Font:h12:1
+GuiFont! Fira\ Code\ Font:h12:1
