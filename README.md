@@ -2,8 +2,9 @@
 
 ## 🚀 Requirements
 
-Two packages are required for other plugins:\
+These packages are required for other plugins:
 - [FZF](https://github.com/junegunn/fzf.vim)
+- [VIM-Plug](https://github.com/junegunn/vim-plug)
 - [COC](https://github.com/neoclide/coc.nvim)
 
 ## ⚒️ Plugins
