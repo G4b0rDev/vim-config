@@ -38,6 +38,16 @@ These packages are required for other plugins:
 ## 🌙 Theme
 https://github.com/drewtempelmeyer/palenight.vim
 
+
+If you are using tmux, the color scheme doens't show properly.
+To enable the theme schema set the following config in your `.tmux.conf`.
+
+**~/.tmux.conf**
+```bash
+set -g default-terminal 'xterm-256color'
+set -as terminal-overrides ',xterm*:Tc:sitm=\E[3m'
+```
+
 ## ⌨️ Commands
 
 > 💡 The leader key is mapped to 'SPACE'
