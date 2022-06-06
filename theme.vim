@@ -1,7 +1,6 @@
 " drewtempelmeyer/palenight theme
 " See: https://github.com/drewtempelmeyer/palenight.vim
 
-
 set background=dark
 colorscheme palenight
 
