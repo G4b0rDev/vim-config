@@ -134,6 +134,7 @@ nmap <silent> <leader>bD :call CloseAllBuffersButCurrent()<cr>
 
 " NERDtree
 map <leader>op :NERDTreeToggle<cr>
+let NERDTreeShowHidden=1
 
 " Toggle comments
 noremap <leader># :call ToggleComment()<cr>
