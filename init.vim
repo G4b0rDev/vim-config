@@ -23,7 +23,6 @@ if &term =~ '256color'
 endif
 
 " Set line numbers
-" set nu
 set rnu
 
 " Set split below
@@ -73,7 +72,7 @@ nnoremap n nzz
 nnoremap N Nzz
 
 " Turn off search highlight when not needed
-map <silent> <leader><cr> :nohl<cr>
+nnoremap <silent> <leader>nH :nohl<cr>
 
 " Show matching brackets
 set showmatch
