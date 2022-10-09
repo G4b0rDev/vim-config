@@ -119,6 +119,9 @@ map <C-l> <C-w>l
 " Disable ex-mode
 nnoremap Q <nop>
 
+" Visual Block mode fix (Windows Terminal)
+nnoremap vB <c-v><cr>
+
 " Buffer management
 function! CloseAllBuffersButCurrent()
     let curr = bufnr("%")
