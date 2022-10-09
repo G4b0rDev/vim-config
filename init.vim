@@ -147,6 +147,7 @@ nnoremap <leader>gP :Git push<cr>
 " fzf config
 map <leader><leader> :Files<cr>
 map <leader>, :Buffers<cr>
+nnoremap <silent> <Leader>f :Rg<cr>
 
 " Blade Intellisense
 nmap <silent> ga <Plug>(coc-codeaction-line)
