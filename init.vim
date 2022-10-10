@@ -119,6 +119,9 @@ map <C-l> <C-w>l
 " Disable ex-mode
 nnoremap Q <nop>
 
+" Terminal escape mode
+tnoremap <Esc> <C-\><C-n>
+
 " Visual Block mode fix (Windows Terminal)
 nnoremap vB <c-v><cr>
 
