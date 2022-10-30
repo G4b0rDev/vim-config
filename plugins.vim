@@ -7,6 +7,7 @@ Plug 'sheerun/vim-polyglot'
 
 " CoC Plugins
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'wuelnerdotexe/vim-astro'
 
 " Icons
 Plug 'kyazdani42/nvim-web-devicons'
