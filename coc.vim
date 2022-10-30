@@ -9,7 +9,8 @@ let g:coc_global_extensions = [
     \ 'coc-blade',
     \ 'coc-tsserver',
     \ 'coc-css',
-    \ 'coc-html']
+    \ 'coc-html',
+    \ 'coc-explorer']
 
 " Use tab for trigger completion with charachters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -101,3 +102,7 @@ nmap <leader>cf <Plug>(coc-fic-current)
 " Code analytics
 nmap <leader>oo :CocOutline<CR>
 nmap <leader>co :CocList outline<CR>
+
+" Coc-Explorer settings
+nmap <leader>e <Cmd>CocCommand explorer<CR>
+autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif

@@ -31,9 +31,13 @@ set splitbelow
 " Enable title
 set title
 
+" Disable mouse
+set mouse=
+
 " Quick terminal
 nmap <leader>ot 99<C-w>l:split<cr>:terminal<cr>10<C-w>_
 nmap <leader>oT 99<C-w>l:vsplit<cr>:terminal<cr>
+tmap <Esc> <C-\><C-n>
 
 " Terminal normal mode remap
 tnoremap <C-w>N <C-\><C-n>
@@ -119,6 +123,9 @@ map <C-l> <C-w>l
 " Disable ex-mode
 nnoremap Q <nop>
 
+" Visual Block mode fix (Windows Terminal)
+nnoremap vB <c-v><cr>
+
 " Buffer management
 function! CloseAllBuffersButCurrent()
     let curr = bufnr("%")
@@ -152,3 +159,6 @@ nnoremap <silent> <Leader>f :Rg<cr>
 " Blade Intellisense
 nmap <silent> ga <Plug>(coc-codeaction-line)
 nmap <silent> gA <Plug>(coc-codeaction)
+
+" Marker
+nnoremap <silent><leader>dm :delmarks!<cr>

@@ -30,6 +30,7 @@ Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'SirVer/ultisnips'
 
 " TailwindCSS IntelliSense
-Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
+" Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
+Plug 'yaegassy/coc-tailwindcss3', {'do': 'yarn install --frozen-lockfile'}
 
 call plug#end()

@@ -2,13 +2,8 @@
     "intelephense.licenceKey": "",
     "intelephense.telemetry.enabled": false,
     "intelephense.environment.phpVersion": "8.1.0",
-    "tailwindCSS.enable": true,
-    "tailwindCSS.includeLanguages": {
-        "vue": "vue",
-        "css": "css",
-        "blade": "blade"
-    },
-    "tailwindCSS.emmetCompletions": true,
+
+    "scss.validate": false,
 
     "languageserver": {
         "tailwind-lsp": {
@@ -19,9 +14,11 @@
                     "typescript",
                     "html",
                     "blade",
-                    "css"
+                    "css",
+                    "scss"
               ],
               "rootPatterns": [
+                    "tailwind.config.cjs",
                     "tailwind.config.js",
                     "tailwind.config.ts",
                     "postcss.config.js",
@@ -48,5 +45,4 @@
             }
         }
     }
-
 }
