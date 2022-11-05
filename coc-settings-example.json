@@ -32,7 +32,7 @@
                       "validate": true,
                       "lint": {
                             "cssConflict": "warning",
-                            "invalidApply": "error",
+                            "invalidApply": "ignore",
                             "invalidScreen": "error",
                             "invalidVariant": "error",
                             "invalidConfigPath": "error",
@@ -44,5 +44,9 @@
                 }
             }
         }
-    }
+    },
+
+    "explorer.icon.enableNerdfont": true,
+    "explorer.previewAction.onHover": false,
+    "explorer.file.showHiddenFiles": true
 }
