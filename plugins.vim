@@ -10,6 +10,7 @@ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 
 " CoC Plugins
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'wuelnerdotexe/vim-astro'
 
 " Icons
 Plug 'kyazdani42/nvim-web-devicons'
