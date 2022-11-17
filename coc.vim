@@ -10,6 +10,7 @@ let g:coc_global_extensions = [
     \ 'coc-tsserver',
     \ 'coc-css',
     \ 'coc-html',
+    \ 'coc-vetur',
     \ 'coc-explorer']
 
 " Use tab for trigger completion with charachters ahead and navigate.
