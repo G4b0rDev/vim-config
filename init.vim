@@ -12,6 +12,7 @@ source $HOME/.config/nvim/utils.vim
 source $HOME/.config/nvim/signify.vim
 source $HOME/.config/nvim/easy-align.vim
 source $HOME/.config/nvim/theme.vim
+source $HOME/.config/nvim/telescope.vim
 
 if &term =~ '256color'
     " disable background color erase (BCE) so that color schemes render
@@ -151,9 +152,9 @@ nnoremap <leader>gp :Git pull<cr>
 nnoremap <leader>gP :Git push<cr>
 
 " fzf config
-map <leader><leader> :Files<cr>
-map <leader>, :Buffers<cr>
-nnoremap <silent> <Leader>f :Rg<cr>
+" map <leader><leader> :Files<cr>
+" map <leader>, :Buffers<cr>
+" nnoremap <silent> <Leader>f :Rg<cr>
 
 " Blade Intellisense
 nmap <silent> ga <Plug>(coc-codeaction-line)
