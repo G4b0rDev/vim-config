@@ -35,9 +35,8 @@ set title
 set mouse=
 
 " Quick terminal
-nmap <leader>ot 99<C-w>l:split<cr>:terminal<cr>10<C-w>_
+nmap <leader>ot 99<C-w>l:split<cr>:terminal<cr>10<C-w>
 nmap <leader>oT 99<C-w>l:vsplit<cr>:terminal<cr>
-tmap <Esc> <C-\><C-n>
 
 " Terminal normal mode remap
 tnoremap <C-w>N <C-\><C-n>
@@ -162,3 +161,6 @@ nmap <silent> gA <Plug>(coc-codeaction)
 
 " Marker
 nnoremap <silent><leader>dm :delmarks!<cr>
+
+" GoLang auto fmt
+autocmd FileType go autocmd BufWritePre <buffer> :GoFmt
