@@ -33,4 +33,7 @@ Plug 'SirVer/ultisnips'
 " Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
 Plug 'yaegassy/coc-tailwindcss3', {'do': 'yarn install --frozen-lockfile'}
 
+" GoLang formatter
+Plug 'darrikonn/vim-gofmt', { 'do': ':GoUpdateBinaries' }
+
 call plug#end()
