@@ -3,4 +3,4 @@ local opts = {
     silent = true,
 }
 
-vim.keymap.set('n', '<leader>op', ':NeoTreeShowToggle<cr>', opts)
+vim.keymap.set('n', '<leader>e', ':NeoTreeShowToggle<cr>', opts)
