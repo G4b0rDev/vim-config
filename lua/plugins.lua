@@ -30,8 +30,8 @@ return require('packer').startup(function(use)
     -- Easy Align
     use 'junegunn/vim-easy-align'
 
-    -- Signify
-    use 'mhinz/vim-signify'
+    -- GitSigns
+    use 'lewis6991/gitsigns.nvim'
 
     -- Barbar
     use {
@@ -54,6 +54,8 @@ return require('packer').startup(function(use)
 
     -- LSP
     use {
+        'williamboman/mason.nvim',
+        'williamboman/mason-lspconfig.nvim',
         'neovim/nvim-lspconfig',
         'hrsh7th/nvim-cmp',
         'hrsh7th/cmp-nvim-lsp',
@@ -62,17 +64,9 @@ return require('packer').startup(function(use)
         'hrsh7th/cmp-nvim-lsp-signature-help',
     }
 
-    -- Mason
-    use {
-        'williamboman/mason.nvim',
-        requires = {
-            { 'williamboman/mason-lspconfig.nvim' }
-        }
-    }
-
     -- Autopairs
     use 'windwp/nvim-autopairs'
 
     -- Laravel Blade highlight
-    use 'jwalton512/vim-blade'
+    -- use 'jwalton512/vim-blade'
 end)
