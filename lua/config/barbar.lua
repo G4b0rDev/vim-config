@@ -9,7 +9,7 @@ require'bufferline'.setup {
     tappages = false,
 
     -- Enable/Disable close button
-    closable = true,
+    closable = false,
 
     -- Enable/Disable clickable tabs
     --  - left-click: go to buffer
