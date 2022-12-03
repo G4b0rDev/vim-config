@@ -68,5 +68,5 @@ return require('packer').startup(function(use)
     use 'windwp/nvim-autopairs'
 
     -- Laravel Blade highlight
-    -- use 'jwalton512/vim-blade'
+    use 'jwalton512/vim-blade'
 end)
