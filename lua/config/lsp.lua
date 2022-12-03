@@ -16,7 +16,6 @@ local lsp_flags = {
 -- luasnip setup
 local luasnip = require 'luasnip'
 
-
 -- nvim-cmp setup
 local cmp = require 'cmp'
 
@@ -96,6 +95,27 @@ require('lspconfig')['intelephense'].setup {
 }
 
 require('lspconfig')['tailwindcss'].setup {
+    filetypes = {
+        "astro",
+        "astro-markdown",
+        "blade",
+        "gohtml",
+        "html",
+        "html-eex",
+        "markdown",
+        "mdx",
+        "php",
+        "css",
+        "postcss",
+        "sass",
+        "scss",
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "vue",
+        "svelte"
+    },
     capabilities = capabilities,
 }
 
