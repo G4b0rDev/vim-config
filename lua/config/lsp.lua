@@ -9,10 +9,6 @@ require('mason-lspconfig').setup({
     },
 })
 
-local lsp_flags = {
-    debounce_text_changes = 150, -- Default in nvim 0.7+
-}
-
 -- luasnip setup
 local luasnip = require 'luasnip'
 
@@ -91,6 +87,10 @@ cmp.setup.cmdline(':', {
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 require('lspconfig')['intelephense'].setup {
+    capabilities = capabilities,
+}
+
+require('lspconfig')['tsserver'].setup {
     capabilities = capabilities,
 }
 
