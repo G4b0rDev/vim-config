@@ -1,3 +1,5 @@
+local lspconfig = require('lspconfig')
+
 require('mason').setup()
 require('mason-lspconfig').setup({
     -- A list of servers to automatically install if they're not already installed. Example: { "rust_analyzer@nightly", "sumneko_lua" }
@@ -7,6 +9,10 @@ require('mason-lspconfig').setup({
         "tailwindcss",
         "sumneko_lua",
     },
+
+    function(server)
+        lspconfig[server].setup({})
+    end,
 })
 
 -- luasnip setup
@@ -100,6 +106,15 @@ require('lspconfig')['intelephense'].setup {
 }
 
 require('lspconfig')['tsserver'].setup {
+    capabilities = capabilities,
+}
+
+require('lspconfig')['html'].setup {
+    cmd = {"html-languageserver", "--stdio"},
+    capabilities = capabilities,
+}
+
+require('lspconfig')['cssls'].setup {
     capabilities = capabilities,
 }
 
