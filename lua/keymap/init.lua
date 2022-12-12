@@ -3,6 +3,9 @@ local opts = { noremap = true }
 -- Saving
 vim.keymap.set('n', '<leader>w', ':w!<cr>', opts)
 
+-- Highlight
+vim.keymap.set('n', '<leader>nH', ':nohl<cr>')
+
 -- Terminal
 vim.keymap.set('n', '<leader>ot', ':split<cr>:terminal<cr>10<C-w>_', opts)
 vim.keymap.set('n', '<leader>oT', ':vsplit<cr>:terminal<cr>', opts)
