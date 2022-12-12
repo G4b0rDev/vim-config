@@ -9,11 +9,31 @@ require('mason-lspconfig').setup({
         "tailwindcss",
         "sumneko_lua",
     },
-
-    function(server)
-        lspconfig[server].setup({})
-    end,
 })
+
+-- Set up lspconfig.
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+require('mason-lspconfig').setup_handlers {
+    -- This is a default handler that will be called for each installed server (also for new servers that are installed during a session)
+    function (server_name)
+       lspconfig[server_name].setup {}
+    end,
+
+   -- You can also override the default handler for specific servers by providing them as keys, like so:
+   ['sumneko_lua'] = function ()
+       require('lspconfig')['sumneko_lua'].setup {
+           settings = {
+               Lua = {
+                   diagnostics = {
+                       -- Get the language server to recognize the `vim` global
+                       globals = {'vim'},
+                   },
+               },
+           },
+       }
+   end
+}
 
 -- luasnip setup
 local luasnip = require 'luasnip'
@@ -97,59 +117,3 @@ cmp.setup.cmdline(':', {
         { name = 'cmdline' }
     })
 })
-
--- Set up lspconfig.
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-require('lspconfig')['intelephense'].setup {
-    capabilities = capabilities,
-}
-
-require('lspconfig')['tsserver'].setup {
-    capabilities = capabilities,
-}
-
-require('lspconfig')['html'].setup {
-    cmd = {"html-languageserver", "--stdio"},
-    capabilities = capabilities,
-}
-
-require('lspconfig')['cssls'].setup {
-    capabilities = capabilities,
-}
-
-require('lspconfig')['tailwindcss'].setup {
-    filetypes = {
-        "astro",
-        "astro-markdown",
-        "blade",
-        "gohtml",
-        "html",
-        "html-eex",
-        "markdown",
-        "mdx",
-        "php",
-        "css",
-        "postcss",
-        "sass",
-        "scss",
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact",
-        "vue",
-        "svelte"
-    },
-    capabilities = capabilities,
-}
-
-require('lspconfig')['sumneko_lua'].setup {
-    settings = {
-        Lua = {
-            diagnostics = {
-                -- Get the language server to recognize the `vim` global
-                globals = {'vim'},
-            },
-        },
-    },
-}
