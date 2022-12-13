@@ -6,32 +6,33 @@ These packages are required for other plugins:
 - [packer](https://github.com/wbthomason/packer.nvim)
 
 ## ⚒️ Plugins
-| Name                                  | Url                                                    | Category    |
-|---------------------------------------|--------------------------------------------------------|-------------|
-| `MunifTanjim/nui.nvim` | [https://github.com/MunifTanjim/nui.nvim](https://github.com/MunifTanjim/nui.nvim) |
-| Theme | |
-| `olimorris/onedarkpro.nvim` | [https://github.com/olimorris/onedarkpro.nvim](https://github.com/olimorris/onedarkpro.nvim) |
-| Plugins | |
-| `nvim-telescope/telescope.nvim` | [https://github.com/nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) |
-| `vim-airline/vim-airline` | [https://github.com/vim-airline/vim-airline](https://github.com/vim-airline/vim-airline) |
-| `vim-airline/vim-airline-themes` | [https://github.com/vim-airline/vim-airline-themes](https://github.com/vim-airline/vim-airline-themes) |
-| `tpope/vim-fugitive` | [https://github.com/tpope/vim-fugitive](https://github.com/tpope/vim-fugitive) |
-| `nvim-treesitter/nvim-treesitter` | [https://github.com/nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) |
-| `junegunn/vim-easy-align` | [https://github.com/junegunn/vim-easy-align](https://github.com/junegunn/vim-easy-align) |
-| `lewis6991/gitsigns.nvim` | [https://github.com/lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) |
-| `romgrk/barbar.nvim` | [https://github.com/romgrk/barbar.nvim](https://github.com/romgrk/barbar.nvim) |
-| `windwp/nvim-autopairs` | [https://github.com/windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs) |
-| `jwalton512/vim-blade` | [https://github.com/jwalton512/vim-blade](https://github.com/jwalton512/vim-blade) |
-| LSP Plguins| |
-| `nvim-neo-tree/neo-tree.nvim` | [https://github.com/nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim) |
-| `williamboman/mason.nvim` | [https://github.com/williamboman/mason.nvim](https://github.com/williamboman/mason.nvim) |
-| `williamboman/mason-lspconfig.nvim` | [https://github.com/williamboman/mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim) |
-| `neovim/nvim-lspconfig` | [https://github.com/neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) |
-| `hrsh7th/nvim-cmp` | [https://github.com/hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp) |
-| `hrsh7th/cmp-nvim-lsp` | [https://github.com/hrsh7th/cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp) |
-| `saadparwaiz1/cmp_luasnip` | [https://github.com/saadparwaiz1/cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip) |
-| `L3MON4D3/LuaSnip` | [https://github.com/L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip) |
-| `hrsh7th/cmp-nvim-lsp-signature-help` | [https://github.com/hrsh7th/cmp-nvim-lsp-signature-help](https://github.com/hrsh7th/cmp-nvim-lsp-signature-help) |
+
+| Name                                    | Url                                                                                                              |
+| --------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `MunifTanjim/nui.nvim`                  | [https://github.com/MunifTanjim/nui.nvim](https://github.com/MunifTanjim/nui.nvim)                               |
+| Theme                                   |                                                                                                                  |
+| `olimorris/onedarkpro.nvim`             | [https://github.com/olimorris/onedarkpro.nvim](https://github.com/olimorris/onedarkpro.nvim)                     |
+| Plugins                                 |                                                                                                                  |
+| `nvim-telescope/telescope.nvim`         | [https://github.com/nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)             |
+| `vim-airline/vim-airline`               | [https://github.com/vim-airline/vim-airline](https://github.com/vim-airline/vim-airline)                         |
+| `vim-airline/vim-airline-themes`        | [https://github.com/vim-airline/vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)           |
+| `tpope/vim-fugitive`                    | [https://github.com/tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)                                   |
+| `nvim-treesitter/nvim-treesitter`       | [https://github.com/nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)         |
+| `junegunn/vim-easy-align`               | [https://github.com/junegunn/vim-easy-align](https://github.com/junegunn/vim-easy-align)                         |
+| `lewis6991/gitsigns.nvim`               | [https://github.com/lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                         |
+| `romgrk/barbar.nvim`                    | [https://github.com/romgrk/barbar.nvim](https://github.com/romgrk/barbar.nvim)                                   |
+| `windwp/nvim-autopairs`                 | [https://github.com/windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)                             |
+| `jwalton512/vim-blade`                  | [https://github.com/jwalton512/vim-blade](https://github.com/jwalton512/vim-blade)                               |
+| LSP Plguins                             |                                                                                                                  |
+| `nvim-neo-tree/neo-tree.nvim`           | [https://github.com/nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)                 |
+| `williamboman/mason.nvim`               | [https://github.com/williamboman/mason.nvim](https://github.com/williamboman/mason.nvim)                         |
+| `williamboman/mason-lspconfig.nvim`     | [https://github.com/williamboman/mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)     |
+| `neovim/nvim-lspconfig`                 | [https://github.com/neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)                             |
+| `hrsh7th/nvim-cmp`                      | [https://github.com/hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)                                       |
+| `hrsh7th/cmp-nvim-lsp`                  | [https://github.com/hrsh7th/cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)                               |
+| `saadparwaiz1/cmp_luasnip`              | [https://github.com/saadparwaiz1/cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)                       |
+| `L3MON4D3/LuaSnip`                      | [https://github.com/L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip)                                       |
+| `hrsh7th/cmp-nvim-lsp-signature-help`   | [https://github.com/hrsh7th/cmp-nvim-lsp-signature-help](https://github.com/hrsh7th/cmp-nvim-lsp-signature-help) |
 
 
 ## 🌙 Theme
