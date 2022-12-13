@@ -23,7 +23,7 @@ These packages are required for other plugins:
 | `romgrk/barbar.nvim`                    | [https://github.com/romgrk/barbar.nvim](https://github.com/romgrk/barbar.nvim)                                   |
 | `windwp/nvim-autopairs`                 | [https://github.com/windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)                             |
 | `jwalton512/vim-blade`                  | [https://github.com/jwalton512/vim-blade](https://github.com/jwalton512/vim-blade)                               |
-| LSP Plguins                             |                                                                                                                  |
+| LSP Plugins                             |                                                                                                                  |
 | `nvim-neo-tree/neo-tree.nvim`           | [https://github.com/nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)                 |
 | `williamboman/mason.nvim`               | [https://github.com/williamboman/mason.nvim](https://github.com/williamboman/mason.nvim)                         |
 | `williamboman/mason-lspconfig.nvim`     | [https://github.com/williamboman/mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)     |
