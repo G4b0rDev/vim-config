@@ -3,37 +3,36 @@
 ## 🚀 Requirements
 
 These packages are required for other plugins:
-- [FZF](https://github.com/junegunn/fzf.vim)
-- [VIM-Plug](https://github.com/junegunn/vim-plug)
-- [COC](https://github.com/neoclide/coc.nvim)
+- [packer](https://github.com/wbthomason/packer.nvim)
 
 ## ⚒️ Plugins
 | Name                                  | Url                                                    | Category    |
 |---------------------------------------|--------------------------------------------------------|-------------|
-| `preservim/nerdtree`                  | https://github.com/preservim/nerdtree                  |             |
-| `sheerun/vim-polyglot`                | https://github.com/sheerun/vim-polyglot                |             |
-| `junegunn/vim-easy-align`             | https://github.com/junegunn/vim-easy-align             |             |
-| `kyazdani42/nvim-web-devicons`        | https://github.com/kyazdani42/nvim-web-devicons        | icons       |
-| `ryanoasis/vim-devicons'`             | https://github.com/ryanoasis/vim-devicons              | icons       |
-| `drewtempelmeyer/palenight.vim`       | https://github.com/drewtempelmeyer/palenight.vim       | theme       |
-| `vim-airline/vim-airline`             | https://github.com/vim-airline/vim-airline             | overlay     |
-| `vim-airline/vim-airline-themes`      | https://github.com/vim-airline/vim-airline-themes      | overlay     |
-| `romgrk/barbar.nvim`                  | https://github.com/romgrk/barbar.nvim                  | overlay     |
-| `tpope/vim-fugitive`                  | https://github.com/tpope/vim-fugitive                  | git         |
-| `mhinz/vim-signify`                   | https://github.com/mhinz/vim-signify                   | git         |
-| `xuyuanp/nerdtree-git-plugin`         | https://github.com/xuyuanp/nerdtree-git-plugin         | git         |
-| `sirver/ultisnips`                    | https://github.com/sirver/ultisnips                    | snippets    |
-| `rodrigore/coc-tailwind-intellisense` | https://github.com/rodrigore/coc-tailwind-intellisense | intelisense |
+| `MunifTanjim/nui.nvim` | [https://github.com/MunifTanjim/nui.nvim](https://github.com/MunifTanjim/nui.nvim) |
+| Theme | |
+| `olimorris/onedarkpro.nvim` | [https://github.com/olimorris/onedarkpro.nvim](https://github.com/olimorris/onedarkpro.nvim) |
+| Plugins | |
+| `nvim-telescope/telescope.nvim` | [https://github.com/nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) |
+| `vim-airline/vim-airline` | [https://github.com/vim-airline/vim-airline](https://github.com/vim-airline/vim-airline) |
+| `vim-airline/vim-airline-themes` | [https://github.com/vim-airline/vim-airline-themes](https://github.com/vim-airline/vim-airline-themes) |
+| `tpope/vim-fugitive` | [https://github.com/tpope/vim-fugitive](https://github.com/tpope/vim-fugitive) |
+| `nvim-treesitter/nvim-treesitter` | [https://github.com/nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) |
+| `junegunn/vim-easy-align` | [https://github.com/junegunn/vim-easy-align](https://github.com/junegunn/vim-easy-align) |
+| `lewis6991/gitsigns.nvim` | [https://github.com/lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) |
+| `romgrk/barbar.nvim` | [https://github.com/romgrk/barbar.nvim](https://github.com/romgrk/barbar.nvim) |
+| `windwp/nvim-autopairs` | [https://github.com/windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs) |
+| `jwalton512/vim-blade` | [https://github.com/jwalton512/vim-blade](https://github.com/jwalton512/vim-blade) |
+| LSP Plguins| |
+| `nvim-neo-tree/neo-tree.nvim` | [https://github.com/nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim) |
+| `williamboman/mason.nvim` | [https://github.com/williamboman/mason.nvim](https://github.com/williamboman/mason.nvim) |
+| `williamboman/mason-lspconfig.nvim` | [https://github.com/williamboman/mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim) |
+| `neovim/nvim-lspconfig` | [https://github.com/neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) |
+| `hrsh7th/nvim-cmp` | [https://github.com/hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp) |
+| `hrsh7th/cmp-nvim-lsp` | [https://github.com/hrsh7th/cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp) |
+| `saadparwaiz1/cmp_luasnip` | [https://github.com/saadparwaiz1/cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip) |
+| `L3MON4D3/LuaSnip` | [https://github.com/L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip) |
+| `hrsh7th/cmp-nvim-lsp-signature-help` | [https://github.com/hrsh7th/cmp-nvim-lsp-signature-help](https://github.com/hrsh7th/cmp-nvim-lsp-signature-help) |
 
-### COC Plugins
-| Name           | Url                                      |
-|----------------|------------------------------------------|
-| `coc-pairs`    | https://github.com/neoclide/coc-pairs    |
-| `coc-json`     | https://github.com/neoclide/coc-json     |
-| `coc-phpls`    | https://github.com/marlonfan/coc-phpls   |
-| `coc-go`       | https://github.com/josa42/coc-go         |
-| `coc-snippets` | https://github.com/neoclide/coc-snippets |
-| `coc-blade`    | https://github.com/yaegassy/coc-blade    |
 
 ## 🌙 Theme
 https://github.com/drewtempelmeyer/palenight.vim
@@ -52,95 +51,75 @@ set -as terminal-overrides ',xterm*:Tc:sitm=\E[3m'
 
 > 💡 The leader key is mapped to 'SPACE'
 
-| Category            | Command           | Description                                            |
-| ----------          | ---------         | -------------                                          |
-| Terminal            | `SPACE` + `ot`    | Horizontal terminal split                              |
-| Terminal            | `SPACE` + `oT`    | Vertical terminal split                                |
-|                     |                   |                                                        |
-| Buffer management   | `SPACE` + `SPACE` | Search files inside the project directory              |
-| Buffer management   | `SPACE` + `,`     | Search & switch buffer                                 |
-| Saving              | `SPACE` + `w`     | Fast saving                                            |
-|                     |                   |                                                        |
-| Split               | `SPACE` + `ss`    | Split editor horizontally                              |
-| Split               | `SPACE` + `sv`    | Split editor vertically                                |
-|                     |                   |                                                        |
-| Split navigation    | `CTRL` + `h`      | Move navigation focus to left                          |
-| Split navigation    | `CTRL` + `j`      | Move navigation focus up                               |
-| Split navigation    | `CTRL` + `k`      | Move navigation focus down                             |
-| Split navigation    | `CTRL` + `l`      | Move navigation focus to right                         |
-| Move selected lines | `K`               | Move selected line up\> Available in the visual mode   |
-| Move selected lines | `J`               | Move selected line down\> Available in the visual mode |
-|                     |                   |                                                        |
-| EasyAlign           | `SPACE` + `fa`    |                                                        |
-|                     |                   |                                                        |
-| NerdTree            | `SPACE` + `op`    | Toggle sidebar folder tree                             |
-|                     |                   |                                                        |
-| Git (fugitive)      | `SPACE` + `gg`    | Git                                                    |
-| Git (fugitive)      | `SPACE` + `gf`    | Git fetch                                              |
-| Git (fugitive)      | `SPACE` + `gp`    | Git pull                                               |
-| Git (fugitive)      | `SPACE` + `gP`    | Git push                                               |
+
+### Basic keymaps
+
+| Command             | Description                                              |
+| ------------------- | -------------------------------------------------------- |
+| `SPACE` + `w`       | Fast saving ( Save file )                                |
+| `SPACE` + `nH`      | Disable search highlight                                 |
+| `SPACE` + `op`      | Toggle neotree filetree                                  |
+|                     |                                                          |
+| `SPACE` + `ot`      | Horizontal terminal split                                |
+| `SPACE` + `oT`      | Vertical terminal split                                  |
+| `CTRL` + `wN`       | Exit terminal insert mode                                |
+|                     |                                                          |
+| `SPACE` + `ss`      | Split editor horizontally                                |
+| `SPACE` + `sv`      | Split editor vertically                                  |
+|                     |                                                          |
+| `CTRL` + `h`        | Move navigation focus to left                            |
+| `CTRL` + `j`        | Move navigation focus up                                 |
+| `CTRL` + `k`        | Move navigation focus down                               |
+| `CTRL` + `l`        | Move navigation focus to right                           |
+| `K`                 | Move selected line up\> Available in the visual mode     |
+| `J`                 | Move selected line down\> Available in the visual mode   |
+
+### Telescope (fuzzy finder) keymaps
+
+| Command             | Description                                              |
+| ------------------- | -------------------------------------------------------- |
+| `SPACE` + `SPACE`   | Show file search                                         |
+| `SPACE` + `lg`      | Live grep search                                         |
+| `SPACE` + `,`       | Show all buffers                                         |
+| `SPACE` + `gb`      | Show git branches                                        |
+| `SPACE` + `th`      | Show help tags                                           |
 
 
-## 🌟 Tailwindcss Intellisense
+### Easy align keymap
 
-Used vim plugin: https://github.com/rodrigore/coc-tailwind-intellisense\
-For more tailwindcss configs check out the official docs: https://github.com/tailwindlabs/tailwindcss-intellisense
+| Command             | Description                                              |
+| ------------------- | -------------------------------------------------------- |
+| `SPACE` + `fa`      | Action for easy align                                    |
 
-> 💡 Note: for tailwindcss v3 the intellisense has a bug.\
-> workaround for the lsp: 
 
-**Issue:** https://github.com/rodrigore/coc-tailwind-intellisense/issues/29
+### Barbar keymaps
 
-```bash
-npm i -g @tailwindcss/language-server
-```
+| Command             | Description                                              |
+| ------------------- | -------------------------------------------------------- |
+| `ALT` + `h`         | Switch to the left tab                                   |
+| `ALT` + `l`         | Switch to the right tab                                  |
+|                     |                                                          |
+| `ALT` + `1`         | Go to tab 1                                              |
+| `ALT` + `2`         | Go to tab 2                                              |
+| `ALT` + `3`         | Go to tab 3                                              |
+| `ALT` + `4`         | Go to tab 4                                              |
+| `ALT` + `5`         | Go to tab 5                                              |
+| `ALT` + `6`         | Go to tab 6                                              |
+| `ALT` + `7`         | Go to tab 7                                              |
+| `ALT` + `8`         | Go to tab 8                                              |
+| `ALT` + `0`         | Go to the last tab                                       |
+|                     |                                                          |
+| `ALT` + `p`         | Pin current tab                                          |
+| `ALT` + `w`         | Close current buffer tab                                 |
+| `ALT` + `W`         | Close **all** buffer tabs                                |
+| `ALT` + `o`         | Pick tab buffer                                          |
 
-or
 
-```bash
-yarn global add @tailwindcss/language-server
-```
+### Git keymaps
 
-`coc-settings.json`
-```json
-"languageserver": {
-    "tailwind-lsp": {
-          "command": "tailwindcss-language-server",
-          "args": ["--stdio"],
-          "filetypes": [
-                "javascript",
-                "javascriptreact",
-                "typescript",
-                "typescriptreact",
-                "html",
-                "css",
-                "blade"
-          ],
-          "rootPatterns": [
-                "tailwind.config.js",
-                "tailwind.config.ts",
-                "postcss.config.js",
-                "postcss.config.ts",
-                "package.json",
-                "node_modules",
-                ".git"
-          ],
-          "settings": {
-                "tailwindCSS": {
-                "validate": true,
-                "lint": {
-                    "cssConflict": "warning",
-                    "invalidApply": "error",
-                    "invalidScreen": "error",
-                    "invalidVariant": "error",
-                    "invalidConfigPath": "error",
-                    "invalidTailwindDirective": "error",
-                    "recommendedVariantOrder": "warning"
-                },
-                "classAttributes": ["class", "className", "classList", "ngClass"],
-                "experimental": {}
-            }
-        }
-    }
-}
-```
+| Command             | Description                                              |
+| ------------------- | -------------------------------------------------------- |
+| `SPACE` + `gg`      | Git                                                      |
+| `SPACE` + `gf`      | Git fetch                                                |
+| `SPACE` + `gp`      | Git pull                                                 |
+| `SPACE` + `gP`      | Git push                                                 |
