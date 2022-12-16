@@ -36,8 +36,8 @@ These packages are required for other plugins:
 
 
 ## 🌙 Theme
-https://github.com/drewtempelmeyer/palenight.vim
 
+https://github.com/olimorris/onedarkpro.nvim
 
 If you are using tmux, the color scheme doens't show properly.
 To enable the theme schema set the following config in your `.tmux.conf`.
