@@ -33,6 +33,32 @@ require('mason-lspconfig').setup_handlers {
            },
        }
    end,
+
+   ['intelephense'] = function ()
+       require('lspconfig').intelephense.setup {
+           settings = {
+               telemetry = {
+                   enabled = false,
+               },
+           },
+       }
+   end,
+
+   ['cssls'] = function ()
+       require('lspconfig').cssls.setup {
+           settings = {
+               lint = {
+                   cssConflict = "warning",
+                   invalidApply = "ignore",
+                   invalidScreen = "error",
+                   invalidVariant = "error",
+                   invalidConfigPath = "error",
+                   invalidTailwindDirective = "error",
+                   recommendedVariantOrder = "warning"
+               }
+           },
+       }
+   end,
 }
 
 -- luasnip setup
