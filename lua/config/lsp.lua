@@ -12,7 +12,7 @@ require('mason-lspconfig').setup({
 })
 
 -- Set up lspconfig.
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+-- local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 require('mason-lspconfig').setup_handlers {
     -- This is a default handler that will be called for each installed server (also for new servers that are installed during a session)
@@ -32,7 +32,7 @@ require('mason-lspconfig').setup_handlers {
                },
            },
        }
-   end
+   end,
 }
 
 -- luasnip setup
