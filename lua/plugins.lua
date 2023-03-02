@@ -62,6 +62,7 @@ return require('packer').startup(function(use)
         'saadparwaiz1/cmp_luasnip',
         'L3MON4D3/LuaSnip',
         'hrsh7th/cmp-nvim-lsp-signature-help',
+        'rafamadriz/friendly-snippets',
     }
 
     -- Autopairs
@@ -69,4 +70,10 @@ return require('packer').startup(function(use)
 
     -- Laravel Blade highlight
     use 'jwalton512/vim-blade'
+
+    -- Astro highlight
+    use 'wuelnerdotexe/vim-astro'
+
+    -- NerdCommenter
+    use 'preservim/nerdcommenter'
 end)
