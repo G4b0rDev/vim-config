@@ -1,5 +1,7 @@
 local lspconfig = require('lspconfig')
 
+require('luasnip.loaders.from_vscode').lazy_load()
+
 require('mason').setup()
 require('mason-lspconfig').setup({
     -- A list of servers to automatically install if they're not already installed. Example: { "rust_analyzer@nightly", "sumneko_lua" }
@@ -7,7 +9,6 @@ require('mason-lspconfig').setup({
     ensure_installed = {
         "intelephense",
         "tailwindcss",
-        "sumneko_lua",
     },
 })
 
@@ -21,8 +22,8 @@ require('mason-lspconfig').setup_handlers {
     end,
 
    -- You can also override the default handler for specific servers by providing them as keys, like so:
-   ['sumneko_lua'] = function ()
-       require('lspconfig')['sumneko_lua'].setup {
+   ['lua_ls'] = function ()
+       require('lspconfig')['lua_ls'].setup {
            settings = {
                Lua = {
                    diagnostics = {
@@ -98,9 +99,9 @@ cmp.setup({
         end, { 'i', 's' }),
         ['<S-Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
-                cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-                luasnip.jump(-1)
+            --   cmp.select_prev_item()
+            -- elseif luasnip.jumpable(-1) then
+            --    luasnip.jump(-1)
             else
                 fallback()
             end
