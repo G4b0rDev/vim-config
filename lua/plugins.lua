@@ -22,7 +22,7 @@ return require('packer').startup(function(use)
     use 'tpope/vim-fugitive'
 
     -- One Dark Pro theme
-    use 'olimorris/onedarkpro.nvim'
+    use 'joshdick/onedark.vim'
 
     -- Treesitter
     use 'nvim-treesitter/nvim-treesitter'
