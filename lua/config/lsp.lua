@@ -5,7 +5,6 @@ require('mason-lspconfig').setup({
     ensure_installed = {
         "intelephense",
         "tailwindcss",
-        "sumneko_lua",
     },
 })
 
@@ -128,7 +127,7 @@ require('lspconfig')['tailwindcss'].setup {
     capabilities = capabilities,
 }
 
-require('lspconfig')['sumneko_lua'].setup {
+require('lspconfig')['lua_ls'].setup {
     settings = {
         Lua = {
             diagnostics = {
