@@ -8,9 +8,6 @@ require'bufferline'.setup {
     -- Enable/Disable current/total tabpages indicator (top right corner)
     tappages = false,
 
-    -- Enable/Disable close button
-    closable = false,
-
     -- Enable/Disable clickable tabs
     --  - left-click: go to buffer
     --  - middle-click: delete buffer
@@ -30,7 +27,12 @@ require'bufferline'.setup {
     -- Enable/Disable icons
     -- if set to 'numbers' will show buffer index in the tabline
     -- if set to 'both', will show buffer index and icons in the tabline
-    icons = true,
+    -- icons = true,
+    icons = {
+        buffer_index = false,
+        buffer_number = false,
+        button = '', -- Remove '' icon
+    },
 
     -- If set, the icon color will follow its corresponding buffer highlight group.
     -- By default, the Buffer/Icon group is linked to the Buffer/group (see Highlighting below).
