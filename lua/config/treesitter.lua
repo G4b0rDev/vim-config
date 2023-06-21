@@ -21,7 +21,7 @@ require'nvim-treesitter.configs'.setup {
     },
 
     autotag = {
-        enable = true,    
+        enable = true,
     },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -44,7 +44,7 @@ require'nvim-treesitter.configs'.setup {
         -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
         -- the name of the parser)
         -- list of language that will be disabled
-        disable = { },
+        -- disable = { },
 
         -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
         disable = function(lang, buf)
