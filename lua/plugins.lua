@@ -76,4 +76,12 @@ return require('packer').startup(function(use)
 
     -- NerdCommenter
     use 'preservim/nerdcommenter'
+
+    -- Svelte highlight
+    use {
+        "evanleck/vim-svelte",
+        branch = "main"
+    }
+
+    use 'onsails/lspkind.nvim'
 end)
