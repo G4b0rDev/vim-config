@@ -1,14 +1,14 @@
 vim.g.mapleader = ' '
 
 -- General
-vim.o.nu = true
+vim.o.nu = false
 vim.o.rnu = true
 vim.o.signcolumn = 'yes'
 vim.o.splitbelow = true
 vim.o.title = true
 vim.o.scrolloff = 7
-vim.o.rules = true
-vim.o.colorcolumn = 120
+vim.o.ruler = true
+vim.o.colorcolumn = "120"
 vim.o.smartcase = true
 vim.o.hlsearch = true
 vim.o.incsearch = true
