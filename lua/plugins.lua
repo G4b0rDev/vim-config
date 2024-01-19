@@ -6,7 +6,7 @@ return require('packer').startup(function(use)
     -- Telescope
     use {
         'nvim-telescope/telescope.nvim',
-        tag = '0.1.0',
+        tag = '0.1.4',
         requires = {
             { 'nvim-lua/plenary.nvim' }
         }
@@ -23,6 +23,8 @@ return require('packer').startup(function(use)
 
     -- One Dark Pro theme
     use 'olimorris/onedarkpro.nvim'
+
+    use { 'catppuccin/nvim', as = 'catppuccin' }
 
     -- Treesitter
     use 'nvim-treesitter/nvim-treesitter'
@@ -51,6 +53,9 @@ return require('packer').startup(function(use)
             "MunifTanjim/nui.nvim",
         }
     }
+
+    -- Icons
+    use 'nvim-tree/nvim-web-devicons'
 
     -- LSP
     use {
@@ -84,4 +89,14 @@ return require('packer').startup(function(use)
     }
 
     use 'onsails/lspkind.nvim'
+
+    -- Prettier
+    use('jose-elias-alvarez/null-ls.nvim')
+    use('MunifTanjim/prettier.nvim')
+
+    -- Notify
+    use 'rcarriga/nvim-notify'
+
+    -- ToggleTerm
+    use { 'akinsho/toggleterm.nvim', tag = '*' }
 end)
