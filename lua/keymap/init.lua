@@ -20,6 +20,7 @@ vim.keymap.set('n', '<leader><cr>', ':nohl<cr>', opts)
 -- Split Buffer
 vim.keymap.set('n', '<leader>ss', ':split<cr>', opts)
 vim.keymap.set('n', '<leader>sv', ':vsplit<cr>', opts)
+vim.keymap.set('n', '<leader>n', ':enew<cr>', opts)
 
 -- Move selected lines
 vim.keymap.set('v', 'J', ":m '>+1'<CR>gv=gv", opts)
