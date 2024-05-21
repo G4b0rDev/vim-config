@@ -1,64 +1,94 @@
-return require('packer').startup(function(use)
-    -- Packer
-    use 'wbthomason/packer.nvim'
-    use 'MunifTanjim/nui.nvim'
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup({
+    {'MunifTanjim/nui.nvim'},
 
     -- Telescope
-    use {
+    {
         'nvim-telescope/telescope.nvim',
+        cmd = 'Telescope',
         tag = '0.1.4',
         requires = {
-            { 'nvim-lua/plenary.nvim' }
+            "nvim-lua/plenary.nvim",
         }
-    }
+    },
 
     -- Airline
-    use {
+    {
         'vim-airline/vim-airline',
         'vim-airline/vim-airline-themes',
-    }
+        event = 'BufEnter'
+    },
 
     -- Fugitive
-    use 'tpope/vim-fugitive'
+    {
+        'tpope/vim-fugitive',
+        cmd = 'Git'
+    },
 
     -- One Dark Pro theme
-    use 'olimorris/onedarkpro.nvim'
-
-    use { 'catppuccin/nvim', as = 'catppuccin' }
+    {
+        'olimorris/onedarkpro.nvim',
+        config = function()
+            -- Configuration for the theme
+        end
+    },
 
     -- Treesitter
-    use 'nvim-treesitter/nvim-treesitter'
+    {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    },
 
     -- Easy Align
-    use 'junegunn/vim-easy-align'
+    {
+        'junegunn/vim-easy-align',
+        keys = {'<Plug>(EasyAlign)'}
+    },
 
     -- GitSigns
-    use 'lewis6991/gitsigns.nvim'
+    {
+        'lewis6991/gitsigns.nvim',
+        event = {'BufRead', 'BufNewFile'}
+    },
 
     -- Barbar
-    use {
+    {
         'romgrk/barbar.nvim',
         requires = {
-            { 'nvim-tree/nvim-web-devicons' }
-        }
-    }
+            {'nvim-tree/nvim-web-devicons'}
+        },
+        event = 'BufWinEnter'
+    },
 
     -- Neo Tree
-    use {
+    {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
-        requires = {
+        dependencies = {
             "nvim-lua/plenary.nvim",
-            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+            "nvim-tree/nvim-web-devicons",
             "MunifTanjim/nui.nvim",
-        }
-    }
+        },
+        cmd = 'NvimTreeToggle'
+    },
 
     -- Icons
-    use 'nvim-tree/nvim-web-devicons'
+    {'nvim-tree/nvim-web-devicons'},
 
     -- LSP
-    use {
+    {
         'williamboman/mason.nvim',
         'williamboman/mason-lspconfig.nvim',
         'neovim/nvim-lspconfig',
@@ -68,35 +98,59 @@ return require('packer').startup(function(use)
         'L3MON4D3/LuaSnip',
         'hrsh7th/cmp-nvim-lsp-signature-help',
         'rafamadriz/friendly-snippets',
-    }
+        event = 'BufRead'
+    },
 
     -- Autopairs
-    use 'windwp/nvim-autopairs'
+    {'windwp/nvim-autopairs'},
 
     -- Laravel Blade highlight
-    use 'jwalton512/vim-blade'
+    {'jwalton512/vim-blade'},
 
     -- Astro highlight
-    use 'wuelnerdotexe/vim-astro'
+    {'wuelnerdotexe/vim-astro'},
 
     -- NerdCommenter
-    use 'preservim/nerdcommenter'
+    {'preservim/nerdcommenter'},
 
     -- Svelte highlight
-    use {
+    {
         "evanleck/vim-svelte",
-        branch = "main"
-    }
+        branch = "main",
+        ft = {'svelte'}
+    },
 
-    use 'onsails/lspkind.nvim'
+    -- lspkind.nvim
+    {
+        'onsails/lspkind.nvim',
+        event = 'BufRead'
+    },
 
     -- Prettier
-    use('jose-elias-alvarez/null-ls.nvim')
-    use('MunifTanjim/prettier.nvim')
+    {'jose-elias-alvarez/null-ls.nvim'},
+    {'MunifTanjim/prettier.nvim'},
 
     -- Notify
-    use 'rcarriga/nvim-notify'
+    {'rcarriga/nvim-notify'},
 
     -- ToggleTerm
-    use { 'akinsho/toggleterm.nvim', tag = '*' }
-end)
+    {'akinsho/toggleterm.nvim'},
+
+    -- Scrollbar
+    {'petertriho/nvim-scrollbar'},
+
+    -- Ultimate Autopair
+    {
+        'altermo/ultimate-autopair.nvim',
+        event = {'InsertEnter', 'CmdlineEnter'},
+        branch = 'v0.6',
+        config = function ()
+            require('ultimate-autopair').setup({
+                --Config goes here
+            })
+        end
+    },
+
+    -- catppuccin theme
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
+})
