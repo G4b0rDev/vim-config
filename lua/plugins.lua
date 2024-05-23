@@ -37,14 +37,6 @@ require("lazy").setup({
         cmd = 'Git'
     },
 
-    -- One Dark Pro theme
-    {
-        'olimorris/onedarkpro.nvim',
-        config = function()
-            -- Configuration for the theme
-        end
-    },
-
     -- Treesitter
     {'nvim-treesitter/nvim-treesitter'},
 
