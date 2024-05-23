@@ -3,7 +3,7 @@
 ## 🚀 Requirements
 
 These packages are required for other plugins:
-- [packer](https://github.com/wbthomason/packer.nvim)
+- [Lazy.nvim](https://github.com/folke/lazy.nvim)
 
 ## ⚒️ Plugins
 
@@ -11,7 +11,7 @@ These packages are required for other plugins:
 | --------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
 | `MunifTanjim/nui.nvim`                  | [https://github.com/MunifTanjim/nui.nvim](https://github.com/MunifTanjim/nui.nvim)                               |
 | Theme                                   |                                                                                                                  |
-| `olimorris/onedarkpro.nvim`             | [https://github.com/olimorris/onedarkpro.nvim](https://github.com/olimorris/onedarkpro.nvim)                     |
+| `catppuccin/nvim`                       | [https://github.com/catppuccin/nvim](https://github.com/catppuccin/nvim)                                         |
 | Plugins                                 |                                                                                                                  |
 | `nvim-telescope/telescope.nvim`         | [https://github.com/nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)             |
 | `vim-airline/vim-airline`               | [https://github.com/vim-airline/vim-airline](https://github.com/vim-airline/vim-airline)                         |
@@ -37,7 +37,9 @@ These packages are required for other plugins:
 
 ## 🌙 Theme
 
-https://github.com/olimorris/onedarkpro.nvim
+https://github.com/catppuccin/nvim
+
+Flavour: Mocha
 
 If you are using tmux, the color scheme doens't show properly.
 To enable the theme schema set the following config in your `.tmux.conf`.
