@@ -46,10 +46,7 @@ require("lazy").setup({
     },
 
     -- Treesitter
-    {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
-    },
+    {'nvim-treesitter/nvim-treesitter'},
 
     -- Easy Align
     {'junegunn/vim-easy-align'},
