@@ -52,10 +52,7 @@ require("lazy").setup({
     },
 
     -- Easy Align
-    {
-        'junegunn/vim-easy-align',
-        keys = {'<Plug>(EasyAlign)'}
-    },
+    {'junegunn/vim-easy-align'},
 
     -- GitSigns
     {
