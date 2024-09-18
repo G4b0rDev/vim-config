@@ -73,31 +73,46 @@ require("lazy").setup({
     -- Icons
     {'nvim-tree/nvim-web-devicons'},
 
-    -- LSP
+    -- Mason
     {
         'williamboman/mason.nvim',
-        'williamboman/mason-lspconfig.nvim',
+        dependencies = {
+            'williamboman/mason-lspconfig.nvim',
+        },
+    },
+
+    -- LSP
+    {
         'neovim/nvim-lspconfig',
         'hrsh7th/nvim-cmp',
         'hrsh7th/cmp-nvim-lsp',
         'saadparwaiz1/cmp_luasnip',
-        'L3MON4D3/LuaSnip',
         'hrsh7th/cmp-nvim-lsp-signature-help',
-        'rafamadriz/friendly-snippets',
-        event = 'BufRead'
     },
 
+    {
+        'L3MON4D3/LuaSnip',
+        version = 'v2.*',
+        build = 'make install_jsregexp',
+        dependencies = {
+            'rafamadriz/friendly-snippets',
+        },
+    },
+
+    -- Completion
+    'hrsh7th/cmp-path',
+
     -- Autopairs
-    {'windwp/nvim-autopairs'},
+    'windwp/nvim-autopairs',
 
     -- Laravel Blade highlight
-    {'jwalton512/vim-blade'},
+    'jwalton512/vim-blade',
 
     -- Astro highlight
-    {'wuelnerdotexe/vim-astro'},
+    'wuelnerdotexe/vim-astro',
 
     -- NerdCommenter
-    {'preservim/nerdcommenter'},
+    'preservim/nerdcommenter',
 
     -- Svelte highlight
     {
@@ -117,26 +132,13 @@ require("lazy").setup({
     {'MunifTanjim/prettier.nvim'},
 
     -- Notify
-    {'rcarriga/nvim-notify'},
+    'rcarriga/nvim-notify',
 
     -- ToggleTerm
-    {'akinsho/toggleterm.nvim'},
-
-    -- Scrollbar
-    {'petertriho/nvim-scrollbar'},
-
-    -- Ultimate Autopair
-    {
-        'altermo/ultimate-autopair.nvim',
-        event = {'InsertEnter', 'CmdlineEnter'},
-        branch = 'v0.6',
-        config = function ()
-            require('ultimate-autopair').setup({
-                --Config goes here
-            })
-        end
-    },
+    'akinsho/toggleterm.nvim',
 
     -- catppuccin theme
-    { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+
+    'sindrets/diffview.nvim',
 })
