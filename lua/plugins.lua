@@ -103,7 +103,11 @@ require("lazy").setup({
     'hrsh7th/cmp-path',
 
     -- Autopairs
-    'windwp/nvim-autopairs',
+    {
+        'windwp/nvim-autopairs',
+        event = 'InsertEnter',
+        config = true,
+    },
 
     -- Laravel Blade highlight
     'jwalton512/vim-blade',
