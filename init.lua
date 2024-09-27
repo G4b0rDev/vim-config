@@ -1,21 +1,7 @@
--- Plugins
-require 'plugins'
+if vim.fn.has('nvim') == 1 and vim.fn.executable('nvr') == 1 then
+    vim.env.GIT_EDITOR = "nvr -cc split --remote-wait-silent +'set bufhidden=wipe'"
+end
 
--- Configs
-require 'config'
-require 'config.airline'
-require 'config.treesitter'
-require 'config.gitsigns'
-require 'config.barbar'
-require 'config.lsp'
-require 'config.theme'
-require 'config.neotree'
+require('core')
+require('initlazy')
 
--- Keymaps
-require 'keymap'
-require 'keymap.telescope'
-require 'keymap.fugitive'
-require 'keymap.easy-align'
-require 'keymap.barbar'
-require 'keymap.neotree'
-require 'keymap.lsp'
