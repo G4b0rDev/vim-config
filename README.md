@@ -2,8 +2,10 @@
 
 ## 🚀 Requirements
 
-These packages are required for other plugins:
+These packages are required to installed on your OS for other used plugins:
 - [Lazy.nvim](https://github.com/folke/lazy.nvim)
+- [fzf](https://github.com/junegunn/fzf?tab=readme-ov-file#installation)
+- [LazyGit](https://github.com/jesseduffield/lazygit)
 
 ## ⚒️ Plugins
 
@@ -12,27 +14,29 @@ These packages are required for other plugins:
 | `MunifTanjim/nui.nvim`                  | [https://github.com/MunifTanjim/nui.nvim](https://github.com/MunifTanjim/nui.nvim)                               |
 | Theme                                   |                                                                                                                  |
 | `catppuccin/nvim`                       | [https://github.com/catppuccin/nvim](https://github.com/catppuccin/nvim)                                         |
-| Plugins                                 |                                                                                                                  |
+| Editor                                  |                                                                                                                  |
 | `nvim-telescope/telescope.nvim`         | [https://github.com/nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)             |
-| `vim-airline/vim-airline`               | [https://github.com/vim-airline/vim-airline](https://github.com/vim-airline/vim-airline)                         |
-| `vim-airline/vim-airline-themes`        | [https://github.com/vim-airline/vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)           |
-| `tpope/vim-fugitive`                    | [https://github.com/tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)                                   |
-| `nvim-treesitter/nvim-treesitter`       | [https://github.com/nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)         |
-| `junegunn/vim-easy-align`               | [https://github.com/junegunn/vim-easy-align](https://github.com/junegunn/vim-easy-align)                         |
-| `lewis6991/gitsigns.nvim`               | [https://github.com/lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                         |
 | `romgrk/barbar.nvim`                    | [https://github.com/romgrk/barbar.nvim](https://github.com/romgrk/barbar.nvim)                                   |
 | `windwp/nvim-autopairs`                 | [https://github.com/windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)                             |
-| `jwalton512/vim-blade`                  | [https://github.com/jwalton512/vim-blade](https://github.com/jwalton512/vim-blade)                               |
-| LSP Plugins                             |                                                                                                                  |
+| `nvim-lualine/lualine.nvim`             | [https://github.com/nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)                     |
 | `nvim-neo-tree/neo-tree.nvim`           | [https://github.com/nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)                 |
+| `rcarriga/nvim-notify`                  | [https://github.com/rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify)                               |
+| `akinsho/toggleterm.nvim`               | [https://github.com/akinsho/toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)                         |
+| Git                                     |                                                                                                                  |
+| `kdheepak/lazygit.nvim`                 | [https://github.com/kdheepak/lazygit.nvim](https://github.com/kdheepak/lazygit.nvim)                             |
+| `tpope/vim-fugitive`                    | [https://github.com/tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)                                   |
+| `sindrets/diffview.nvim`                | [https://github.com/sindrets/diffview.nvim](https://github.com/sindrets/diffview.nvim)                           |
+| `lewis6991/gitsigns.nvim`               | [https://github.com/lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                         |
+| Formating/Linting                       |                                                                                                                  |
+| `stevearc/conform.nvim`                 | [https://github.com/stevearc/conform.nvim](https://github.com/stevearc/conform.nvim)                             |
+| `mfussenegger/nvim-lint`                | [https://github.com/mfussenegger/nvim-lint](https://github.com/mfussenegger/nvim-lint)                           |
+| `junegunn/vim-easy-align`               | [https://github.com/junegunn/vim-easy-align](https://github.com/junegunn/vim-easy-align)                         |
+| Diagnostics                             |                                                                                                                  |
+| `folke/trouble.nvim`                    | [https://github.com/folke/trouble.nvim](https://github.com/folke/trouble.nvim)                                   |
+| LSP Plugins                             |                                                                                                                  |
 | `williamboman/mason.nvim`               | [https://github.com/williamboman/mason.nvim](https://github.com/williamboman/mason.nvim)                         |
-| `williamboman/mason-lspconfig.nvim`     | [https://github.com/williamboman/mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)     |
 | `neovim/nvim-lspconfig`                 | [https://github.com/neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)                             |
-| `hrsh7th/nvim-cmp`                      | [https://github.com/hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)                                       |
-| `hrsh7th/cmp-nvim-lsp`                  | [https://github.com/hrsh7th/cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)                               |
-| `saadparwaiz1/cmp_luasnip`              | [https://github.com/saadparwaiz1/cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)                       |
-| `L3MON4D3/LuaSnip`                      | [https://github.com/L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip)                                       |
-| `hrsh7th/cmp-nvim-lsp-signature-help`   | [https://github.com/hrsh7th/cmp-nvim-lsp-signature-help](https://github.com/hrsh7th/cmp-nvim-lsp-signature-help) |
+| `nvim-treesitter/nvim-treesitter`       | [https://github.com/nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)         |
 
 
 ## 🌙 Theme
@@ -63,9 +67,6 @@ set -as terminal-overrides ',xterm*:Tc:sitm=\E[3m'
 | `SPACE` + `nH`      | Disable search highlight                                 |
 | `SPACE` + `op`      | Toggle neotree filetree                                  |
 |                     |                                                          |
-| `SPACE` + `ot`      | Horizontal terminal split                                |
-| `SPACE` + `oT`      | Vertical terminal split                                  |
-| `CTRL` + `wN`       | Exit terminal insert mode                                |
 |                     |                                                          |
 | `SPACE` + `ss`      | Split editor horizontally                                |
 | `SPACE` + `sv`      | Split editor vertically                                  |
@@ -76,6 +77,14 @@ set -as terminal-overrides ',xterm*:Tc:sitm=\E[3m'
 | `CTRL` + `l`        | Move navigation focus to right                           |
 | `K`                 | Move selected line up\> Available in the visual mode     |
 | `J`                 | Move selected line down\> Available in the visual mode   |
+
+### Terminal keymaps
+
+| Command             | Description                                              |
+| ------------------- | -------------------------------------------------------- |
+| `SPACE` + `ot`      | Horizontal terminal                                      |
+| `SPACE` + `oT`      | Floating window terminal                                 |
+| `CTRL` + `wN`       | Exit terminal insert mode                                |
 
 ### Telescope (fuzzy finder) keymaps
 
@@ -126,3 +135,5 @@ set -as terminal-overrides ',xterm*:Tc:sitm=\E[3m'
 | `SPACE` + `gf`      | Git fetch                                                |
 | `SPACE` + `gp`      | Git pull                                                 |
 | `SPACE` + `gP`      | Git push                                                 |
+| `SPACE` + `lg`      | Open LazyGit                                             |
+| `SPACE` + `gh`      | Open diffview history                                    |
