@@ -3,7 +3,7 @@
 return {
     'stevearc/conform.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
-    config = function ()
+    config = function()
         -- config
         local conform = require('conform')
 
@@ -26,11 +26,22 @@ return {
             },
         })
 
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            pattern = "*.svelte",
+            callback = function()
+                conform.format({
+                    lsp_fallback = true,
+                    async = true,
+                    timeout_ms = 500,
+                })
+            end,
+        })
+
         -- keymaps
-        vim.keymap.set({ 'n', 'v'}, '<leader>mp', function ()
+        vim.keymap.set({ 'n', 'v' }, '<leader>mp', function()
             conform.format({
                 lsp_fallback = true,
-                async = false,
+                async = true,
                 timeout_ms = 500,
             })
         end, { desc = 'Format file or range in visual mode' })
