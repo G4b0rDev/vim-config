@@ -2,8 +2,8 @@
 -- See: https://github.com/nvim-treesitter/nvim-treesitter
 return {
     'nvim-treesitter/nvim-treesitter',
-    config = function ()
-        require'nvim-treesitter.configs'.setup {
+    config = function()
+        require 'nvim-treesitter.configs'.setup {
             -- List of parser names or all
             ensure_installed = {
                 'lua',
@@ -23,6 +23,7 @@ return {
                 'svelte',
                 'json',
                 'json5',
+                'blade',
             },
 
             autotag = {
@@ -37,7 +38,7 @@ return {
             auto_install = false,
 
             -- List of parsers to ignore installing (for 'all')
-            ignore_install = { },
+            ignore_install = {},
 
             -- If you need to change the installation directory of the parsers (see -> Advanced Setup)
             -- parser_install_dir = '/some/path/to/store/parsers', -- Remember to run vim.opt.runtimepath:append('/some/path/to/store/parsers')!
@@ -67,5 +68,21 @@ return {
                 additional_vim_regex_highlighting = false,
             },
         }
+
+        local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+        parser_config.blade = {
+            install_info = {
+                url = "https://github.com/EmranMR/tree-sitter-blade",
+                files = { "src/parser.c" },
+                branch = "main",
+            },
+            filetype = "blade",
+        }
+
+        vim.filetype.add({
+            pattern = {
+                [".*%.blade%.php"] = "blade",
+            },
+        })
     end
 }
