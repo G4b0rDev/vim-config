@@ -54,6 +54,14 @@ set -g default-terminal 'xterm-256color'
 set -as terminal-overrides ',xterm*:Tc:sitm=\E[3m'
 ```
 
+## Treesitter
+
+### Laravel Blade
+
+```sh
+:TSInstall blade
+```
+
 ## ⌨️ Commands
 
 > 💡 The leader key is mapped to 'SPACE'
