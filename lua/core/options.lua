@@ -30,3 +30,4 @@ opt.wrap = false
 
 -- Mouse support
 opt.mouse = ""
+opt.encoding = "utf-8"
