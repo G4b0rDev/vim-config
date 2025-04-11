@@ -11,12 +11,12 @@ return {
         'folke/todo-comments.nvim',
     },
     keys = {
-        { '<leader><leader>', ':Telescope find_files<CR>', mode = 'n' },
-        { '<leader>tg', ':Telescope live_grep<CR>', mode = 'n' },
-        { '<leader>,', ':Telescope buffers<CR>', mode = 'n' },
-        { '<leader>gb', ':Telescope git_branches<CR>', mode = 'n' },
-        { '<leader>th', ':Telescope help_tags<CR>', mode = 'n' },
-        { '<leader>fg', ':Telescope live_grep<CR>', mode = 'n' },
+        { '<leader><leader>', ':Telescope find_files<CR>',   mode = 'n' },
+        { '<leader>tg',       ':Telescope live_grep<CR>',    mode = 'n' },
+        { '<leader>,',        ':Telescope buffers<CR>',      mode = 'n' },
+        { '<leader>gb',       ':Telescope git_branches<CR>', mode = 'n' },
+        { '<leader>th',       ':Telescope help_tags<CR>',    mode = 'n' },
+        { '<leader>fg',       ':Telescope live_grep<CR>',    mode = 'n' },
     },
     config = function()
         local telescope = require('telescope')
@@ -28,23 +28,23 @@ return {
 
         -- or create your custom action
         local custom_actions = transform_mod({
-          open_trouble_qflist = function(prompt_bufnr)
-            trouble.toggle('quickfix')
-          end,
+            open_trouble_qflist = function(prompt_bufnr)
+                trouble.toggle('quickfix')
+            end,
         })
 
         telescope.setup({
-          defaults = {
-            path_display = { 'smart' },
-            mappings = {
-              i = {
-                ['<C-k>'] = actions.move_selection_previous, -- move to prev result
-                ['<C-j>'] = actions.move_selection_next, -- move to next result
-                ['<C-q>'] = actions.send_selected_to_qflist + custom_actions.open_trouble_qflist,
-                ['<C-t>'] = trouble_telescope.open,
-              },
+            defaults = {
+                path_display = { 'absolute' },
+                mappings = {
+                    i = {
+                        ['<C-k>'] = actions.move_selection_previous, -- move to prev result
+                        ['<C-j>'] = actions.move_selection_next, -- move to next result
+                        ['<C-q>'] = actions.send_selected_to_qflist + custom_actions.open_trouble_qflist,
+                        ['<C-t>'] = trouble_telescope.open,
+                    },
+                },
             },
-          },
         })
 
         -- keymaps
