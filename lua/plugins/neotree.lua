@@ -8,8 +8,9 @@ return {
         'nvim-tree/nvim-web-devicons',
         'MunifTanjim/nui.nvim',
     },
-    cmd = 'NvimTreeToggle',
-    config = function ()
+    lazy = false,
+    cmd = 'Neotree',
+    config = function()
         -- config
         require('neo-tree').setup {
             close_if_last_window = true,
@@ -29,6 +30,6 @@ return {
             silent = true,
         }
 
-        vim.keymap.set('n', '<leader>op', ':NeoTreeShowToggle<cr>', opts)
+        vim.keymap.set('n', '<leader>op', ':Neotree toggle<cr>', opts)
     end
 }
