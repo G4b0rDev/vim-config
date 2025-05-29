@@ -17,6 +17,7 @@ return {
                 json = { 'prettier' },
                 markdown = { 'prettier' },
                 lua = { 'stylua' },
+                php = { 'pint' },
                 blade = { 'bladeformatter' },
             },
             format_on_save = {
