@@ -8,8 +8,8 @@ return {
         'hrsh7th/cmp-nvim-lsp-signature-help',
     },
     config = function()
-        local lspconfig = require('lspconfig')
-        local mason_lspconfig = require('mason-lspconfig')
+        vim.lsp.set_log_level('off') -- set log level to warn to avoid too much noise in the logs
+
         local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
         local keymap = vim.keymap -- for conciseness
@@ -50,10 +50,10 @@ return {
                 keymap.set('n', '<leader>d', vim.diagnostic.open_float, opts) -- show diagnostics for line
 
                 opts.desc = 'Go to previous diagnostic'
-                keymap.set('n', '[d', vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
+                keymap.set('n', '[d', function() vim.diagnostic.jump({ direction = "previous" }) end, opts) -- jump to previous diagnostic in buffer
 
                 opts.desc = 'Go to next diagnostic'
-                keymap.set('n', ']d', vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
+                keymap.set('n', ']d', function() vim.diagnostic.jump({ direction = "next" }) end, opts) -- jump to next diagnostic in buffer
 
                 opts.desc = 'Show documentation for what is under cursor'
                 keymap.set('n', 'K', vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
@@ -73,95 +73,164 @@ return {
         local capabilities = cmp_nvim_lsp.default_capabilities()
 
         -- Change the Diagnostic symbols in the sign column (gutter)
-        -- (not in youtube nvim video)
-        local signs = { Error = ' ', Warn = " ", Hint = "󰠠 ", Info = " " }
-        for type, icon in pairs(signs) do
-            local hl = 'DiagnosticSign' .. type
-            vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
-        end
+        vim.diagnostic.config({
+            signs = {
+                text = {
+                    [vim.diagnostic.severity.ERROR] = ' ',
+                    [vim.diagnostic.severity.WARN]  = ' ',
+                    [vim.diagnostic.severity.HINT]  = '󰠠 ',
+                    [vim.diagnostic.severity.INFO]  = ' ',
+                },
+            },
+        })
 
-        mason_lspconfig.setup_handlers({
-            -- default handler for installed servers
-            function(server_name)
-                if server_name == 'tsserver' then
-                    server_name = 'ts_ls'
-                end
+        -- configure svelte server
+        vim.lsp.config('svelte', {
+            capabilities = capabilities,
+            on_attach = function(client, bufnr)
+                vim.api.nvim_create_autocmd('BufWritePost', {
+                    pattern = { '*.js', '*.ts', '*.svelte' },
+                    callback = function(ctx)
+                        -- Here use ctx.match instead of ctx.file
+                        -- client.notify('$/onDidChangeTsOrJsFile', { uri = ctx.match })
 
-                lspconfig[server_name].setup({
-                    capabilities = capabilities,
-                })
-            end,
-
-            ['svelte'] = function()
-                -- configure svelte server
-                lspconfig['svelte'].setup({
-                    capabilities = capabilities,
-                    on_attach = function(client, bufnr)
-                        vim.api.nvim_create_autocmd('BufWritePost', {
-                            pattern = { '*.js', '*.ts', '*.svelte' },
-                            callback = function(ctx)
-                                -- Here use ctx.match instead of ctx.file
-                                -- client.notify('$/onDidChangeTsOrJsFile', { uri = ctx.match })
-
-                                if client.name == "svelte" then
-                                    client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
-                                end
-                            end,
-                        })
+                        if client.name == "svelte" then
+                            client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
+                        end
                     end,
                 })
             end,
+        })
 
-            ['emmet_ls'] = function()
-                -- configure emmet language server
-                lspconfig['emmet_ls'].setup({
-                    capabilities = capabilities,
-                    filetypes = { 'html', 'css', 'svelte' },
-                })
+        -- configure emmet language server
+        vim.lsp.config('emmet_ls', {
+            capabilities = capabilities,
+            filetypes = { 'html', 'css', 'svelte' },
+        })
+
+        -- configure lua server (with special settings)
+        vim.lsp.config('lua_ls', {
+            capabilities = capabilities,
+            settings = {
+                Lua = {
+                    diagnostics = {
+                        globals = { 'vim' },
+                    },
+                    completion = {
+                        callSnippet = 'Replace',
+                    },
+                },
+            },
+        })
+
+        vim.lsp.config('cssls', {
+            settings = {
+                lint = {
+                    cssConflict = 'warning',
+                    invalidApply = 'ignore',
+                    invalidScreen = 'error',
+                    invalidVariant = 'error',
+                    invalidConfigPath = 'error',
+                    invalidTailwindDirective = 'error',
+                    recommendedVariantOrder = 'warning',
+                }
+            },
+            on_attach = function(client, bufnr)
+                client.server_capabilities.documentFormattingProvider = false
+                client.server_capabilities.documentRangeFormattingProvider = false
             end,
+        })
 
-            ['lua_ls'] = function()
-                -- configure lua server (with special settings)
-                lspconfig['lua_ls'].setup({
-                    capabilities = capabilities,
-                    settings = {
-                        Lua = {
-                            -- make the language server recognize 'vim' global
-                            diagnostics = {
-                                globals = { 'vim' },
-                            },
-                            completion = {
-                                callSnippet = 'Replace',
-                            },
+        vim.lsp.config('intelephense', {
+            settings = {
+                telemetry = {
+                    enabled = false,
+                },
+            },
+        })
+
+        vim.lsp.config('ts_ls', {
+            capabilities = capabilities,
+            filetypes = {
+                'typescript',
+                'javascript',
+                'javascriptreact',
+                'typescriptreact',
+            },
+            init_options = {
+                plugins = {
+                    {
+                        name = '@vue/typescript-plugin',
+                        location = vim.fn.stdpath('data') ..
+                            "/mason/packages/vue-language-server/node_modules/@vue/language-server",
+                        languages = { 'vue' },
+                    }
+                },
+            },
+        })
+
+        vim.lsp.config('vue_ls', {
+            capabilities = capabilities,
+            filetypes = {
+                'vue',
+                'javascript',
+            },
+            init_options = {
+                vue = {
+                    hybridMode = false,
+                },
+                typescript = {
+                    -- tsdk = vim.fn.stdpath 'data' .. '/node_modules/typescript/lib',
+                    tsdk = vim.fn.getcwd() .. '/node_modules/typescript/lib',
+                },
+            },
+            settings = {
+                volar = {
+                    autoCompleteRefs = true,
+                },
+                vue = {
+                    format = {
+                        enable = false,
+                    },
+                    complete = {
+                        casing = {
+                            props = 'kebab',
+                            tags = 'kebab',
                         },
                     },
+                },
+            },
+        })
+
+        vim.lsp.config("vtsls", {
+            filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+            settings = {
+                vtsls = { tsserver = { globalPlugins = {} } },
+                typescript = {
+                    inlayHints = {
+                        parameterNames = { enabled = "literals" },
+                        parameterTypes = { enabled = true },
+                        variableTypes = { enabled = true },
+                        propertyDeclarationTypes = { enabled = true },
+                        functionLikeReturnTypes = { enabled = true },
+                        enumMemberValues = { enabled = true },
+                    },
+                },
+            },
+            before_init = function(_, config)
+                table.insert(config.settings.vtsls.tsserver.globalPlugins, {
+                    name = "@vue/typescript-plugin",
+                    location = vim.fn.expand(
+                        "$MASON/packages/vue-language-server/node_modules/@vue/language-server"
+                    ),
+                    languages = { "vue" },
+                    configNamespace = "typescript",
+                    enableForWorkspaceTypeScriptVersions = true,
                 })
             end,
-
-            ['cssls'] = function()
-                require('lspconfig').cssls.setup {
-                    settings = {
-                        lint = {
-                            cssConflict = 'warning',
-                            invalidApply = 'ignore',
-                            invalidScreen = 'error',
-                            invalidVariant = 'error',
-                            invalidConfigPath = 'error',
-                            invalidTailwindDirective = 'error',
-                            recommendedVariantOrder = 'warning',
-                        }
-                    },
-                }
-            end,
-
-            ['intelephense'] = function()
-                require('lspconfig').intelephense.setup {
-                    settings = {
-                        telemetry = {
-                            enabled = false,
-                        },
-                    },
-                }
+            on_attach = function(client)
+                client.server_capabilities.documentFormattingProvider = false
+                client.server_capabilities.documentRangeFormattingProvider = false
             end,
         })
     end,
