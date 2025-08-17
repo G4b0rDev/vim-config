@@ -100,7 +100,7 @@ return {
     map("n", "<A-p>", "<Cmd>BufferPin<CR>", opts)
 
     -- Close buffer
-    map("n", "<A-w>", "<Cmd>BufferClose<CR>", opts)
+    map("n", "<C-w>", "<Cmd>BufferClose<CR>", opts)
     map("n", "<A-W>", "<Cmd>BufferCloseAllButCurrent<CR>", opts)
 
     -- Magic buffer-picking mode
