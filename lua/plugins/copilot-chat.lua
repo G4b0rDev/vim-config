@@ -58,22 +58,6 @@ return {
 
       vim.api.nvim_set_hl(0, "CopilotChatHeader", { fg = "#7C3AED", bold = true })
       vim.api.nvim_set_hl(0, "CopilotChatSeparator", { fg = "#374151" })
-
-      -- Automatically select the buffer when CopilotChat is opened
-      vim.api.nvim_create_autocmd("User", {
-        pattern = "CopilotChatOpened",
-        callback = function()
-          require("CopilotChat.select").buffer()
-        end,
-      })
-
-      -- Automatically select the buffer when CopilotChat is opened
-      vim.api.nvim_create_autocmd("User", {
-        pattern = "CopilotChatOpened",
-        callback = function()
-          require("CopilotChat.select").buffer()
-        end,
-      })
     end,
   },
 }
