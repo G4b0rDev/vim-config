@@ -112,6 +112,17 @@ return {
       filetypes = { "html", "css", "svelte" },
     })
 
+    -- configure html server
+    vim.lsp.config("html", {
+      capabilities = capabilities,
+      filetypes = { "html", "blade" },
+      on_attach = function(client, bufnr)
+        if vim.bo[bufnr].filetype == "blade" then
+          client.server_capabilities.documentFormattingProvider = false
+        end
+      end,
+    })
+
     -- configure lua server (with special settings)
     vim.lsp.config("lua_ls", {
       capabilities = capabilities,
