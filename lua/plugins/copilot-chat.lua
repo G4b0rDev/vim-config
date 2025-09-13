@@ -45,6 +45,8 @@ return {
         chat.toggle()
       end, { noremap = true })
 
+      vim.keymap.set("n", "<leader>cg", ":CopilotChatCommit<CR>", { noremap = true, silent = true })
+
       -- Apply AI changes directly to buffer
       vim.keymap.set("n", "<leader>ca", "<cmd>CopilotChatCommit<cr>", { noremap = true, desc = "Apply AI change" })
 
