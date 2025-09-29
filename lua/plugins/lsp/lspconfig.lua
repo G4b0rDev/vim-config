@@ -115,7 +115,7 @@ return {
     -- configure html server
     vim.lsp.config("html", {
       capabilities = capabilities,
-      filetypes = { "html", "blade" },
+      filetypes = { "html", "blade", "astro" },
       on_attach = function(client, bufnr)
         if vim.bo[bufnr].filetype == "blade" then
           client.server_capabilities.documentFormattingProvider = false
