@@ -32,7 +32,7 @@ opt.mouse = ""
 opt.encoding = "utf-8"
 
 -- Disable text wrap
-vim.opt.wrap = true
+vim.opt.wrap = false
 
 -- Prevent line wrapping
 vim.opt.breakindent = true
