@@ -11,6 +11,8 @@ return {
     build = "make tiktoken",
     opts = {
       debug = false,
+      model = "claude-sonnet-4.5",
+      temperature = 0.1,
       mappings = {
         complete = {
           detail = "Use @<Tab> or /<Tab> for options.",
