@@ -78,6 +78,7 @@ return {
 
     -- Change the Diagnostic symbols in the sign column (gutter)
     vim.diagnostic.config({
+      virtual_text = false,
       signs = {
         text = {
           [vim.diagnostic.severity.ERROR] = " ",
