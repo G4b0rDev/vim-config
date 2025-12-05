@@ -3,10 +3,12 @@
 return {
   "stevearc/conform.nvim",
   event = { "BufReadPre", "BufNewFile" },
+  cmd = { "ConformInfo" },
   opts = {
     formatters_by_ft = {
       javascript = { "prettier" },
       typescript = { "prettier" },
+      vue = { "prettier" },
       svelte = { "prettier" },
       css = { "prettier" },
       html = { "prettier" },
