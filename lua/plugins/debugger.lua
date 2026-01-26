@@ -12,14 +12,32 @@ return {
 
     require("nvim-dap-virtual-text").setup()
 
-    dapui.setup()
+    dapui.setup({
+      controls = {
+        enabled = false,
+      },
+      floating = {
+        border = "rounded",
+      },
+      render = {
+        max_type_length = 60,
+        max_value_lines = 200,
+      },
+      layouts = {
+        {
+          elements = {
+            { id = "scopes", size = 1.0 },
+          },
+          position = "bottom",
+          size = 15,
+        },
+      },
+    })
 
-    dap.listeners.before.attach.dapui_config = function()
+    dap.listeners.after.event_initialized.dapui_config = function()
       dapui.open()
     end
-    dap.listeners.before.launch.dapui_config = function()
-      dapui.open()
-    end
+
     dap.listeners.before.event_terminated.dapui_config = function()
       dapui.close()
     end
@@ -32,18 +50,6 @@ return {
       command = "node",
       args = {
         vim.fn.stdpath("data") .. "/mason/packages/php-debug-adapter/extension/out/phpDebug.js",
-      },
-    }
-
-    dap.configurations.php = {
-      {
-        type = "php",
-        request = "launch",
-        name = "Listen for Xdebug",
-        port = 9003,
-        pathMappings = {
-          [vim.fn.getcwd()] = vim.fn.getcwd(),
-        },
       },
     }
 
