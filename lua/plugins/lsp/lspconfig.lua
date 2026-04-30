@@ -8,8 +8,6 @@ return {
     "hrsh7th/cmp-nvim-lsp-signature-help",
   },
   config = function()
-    vim.lsp.set_log_level("off") -- set log level to warn to avoid too much noise in the logs
-
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
     local keymap = vim.keymap -- for conciseness
@@ -96,9 +94,6 @@ return {
         vim.api.nvim_create_autocmd("BufWritePost", {
           pattern = { "*.js", "*.ts", "*.svelte" },
           callback = function(ctx)
-            -- Here use ctx.match instead of ctx.file
-            -- client.notify('$/onDidChangeTsOrJsFile', { uri = ctx.match })
-
             if client.name == "svelte" then
               client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
             end
@@ -147,6 +142,7 @@ return {
     })
 
     vim.lsp.config("cssls", {
+      capabilities = capabilities,
       settings = {
         lint = {
           cssConflict = "warning",
@@ -165,6 +161,8 @@ return {
     })
 
     vim.lsp.config("intelephense", {
+      capabilities = capabilities,
+      filetypes = { "php", "blade" },
       settings = {
         telemetry = {
           enabled = false,
@@ -226,6 +224,7 @@ return {
     })
 
     vim.lsp.config("vtsls", {
+      capabilities = capabilities,
       filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
       settings = {
         vtsls = { tsserver = { globalPlugins = {} } },
