@@ -12,12 +12,42 @@ return {
 
     local keymap = vim.keymap -- for conciseness
 
+    local function strip_unused_imports(bufnr, client)
+      local params = {
+        textDocument = vim.lsp.util.make_text_document_params(bufnr),
+        range = {
+          start = { line = 0, character = 0 },
+          ["end"] = { line = vim.api.nvim_buf_line_count(bufnr), character = 0 },
+        },
+        context = { only = { "source.removeUnused.ts" }, diagnostics = {} },
+      }
+      local results = vim.lsp.buf_request_sync(bufnr, "textDocument/codeAction", params, 1000)
+      for _, res in pairs(results or {}) do
+        for _, action in ipairs(res.result or {}) do
+          if action.edit then
+            vim.lsp.util.apply_workspace_edit(action.edit, client.offset_encoding)
+          elseif action.command then
+            client:exec_cmd(action.command, { bufnr = bufnr })
+          end
+        end
+      end
+    end
+
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("UserLspConfig", {}),
       callback = function(ev)
-        -- Buffer local mappings.
-        -- See `:help vim.lsp.*` for documentation on any of the below functions
         local opts = { buffer = ev.buf, silent = true }
+
+        local client = vim.lsp.get_client_by_id(ev.data.client_id)
+        if client and vim.tbl_contains({ "ts_ls", "vtsls", "vue_ls" }, client.name) then
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            buffer = ev.buf,
+            group = vim.api.nvim_create_augroup("RemoveUnusedImports-" .. ev.buf, { clear = true }),
+            callback = function()
+              strip_unused_imports(ev.buf, client)
+            end,
+          })
+        end
 
         -- set keybinds
         opts.desc = "Show LSP references"
