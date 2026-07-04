@@ -14,9 +14,10 @@ return {
       html = { "prettier" },
       json = { "prettier" },
       markdown = { "prettier" },
+      astro = { "prettier" },
       lua = { "stylua" },
       php = { "pint" },
-      blade = { "bladeformatter" },
+      blade = { "bladeformatter", "prettier" },
     },
     -- Set default options
     default_format_opts = {
