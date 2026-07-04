@@ -2,8 +2,6 @@
 -- https://github.com/nvim-telescope/telescope.nvim
 return {
   "nvim-telescope/telescope.nvim",
-  cmd = "Telescope",
-  tag = "0.1.8",
   requires = {
     "nvim-lua/plenary.nvim",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
@@ -53,7 +51,13 @@ return {
     local opts = { noremap = true }
 
     -- Telescope Search
-    keymap.set("n", "<leader><leader>", builtin.find_files, opts)
+    keymap.set("n", "<leader><leader>", function()
+      builtin.find_files({
+        hidden = true,
+        no_ignore = true,
+        file_ignore_patterns = { "%.git/", "vendor/", "node_modules/" },
+      })
+    end, opts)
     keymap.set("n", "<leader>tg", builtin.live_grep, opts)
 
     keymap.set("n", "<leader>,", builtin.buffers, opts)
