@@ -1,11 +1,47 @@
 # Gabor's VIM Config
 
+## 📑 Table of Contents
+
+- [🚀 Requirements](#-requirements)
+  - [PHP debugging (optional)](#php-debugging-optional)
+- [⚒️ Plugins](#-plugins)
+- [🌙 Theme](#-theme)
+- [Treesitter](#treesitter)
+- [⌨️ Commands](#-commands)
+  - [Basic keymaps](#basic-keymaps)
+  - [Terminal keymaps](#terminal-keymaps)
+  - [Telescope (fuzzy finder) keymaps](#telescope-fuzzy-finder-keymaps)
+  - [Easy align keymap](#easy-align-keymap)
+  - [Barbar keymaps](#barbar-keymaps)
+  - [Git keymaps](#git-keymaps)
+  - [LSP keymaps](#lsp-keymaps)
+  - [Trouble keymaps](#trouble-keymaps)
+  - [Debugger (DAP) keymaps](#debugger-dap-keymaps)
+  - [Testing (Neotest) keymaps](#testing-neotest-keymaps)
+  - [CopilotChat keymaps](#copilotchat-keymaps)
+  - [Notification keymaps](#notification-keymaps)
+  - [Linting keymaps](#linting-keymaps)
+
 ## 🚀 Requirements
 
-These packages are required to installed on your OS for other used plugins:
-- [Lazy.nvim](https://github.com/folke/lazy.nvim)
-- [fzf](https://github.com/junegunn/fzf?tab=readme-ov-file#installation)
-- [LazyGit](https://github.com/jesseduffield/lazygit)
+These packages/tools are required to be installed on your OS for the
+plugins in this config to work:
+- [Lazy.nvim](https://github.com/folke/lazy.nvim) — plugin manager
+- [LazyGit](https://github.com/jesseduffield/lazygit) — used by `lazygit.nvim`
+- [ripgrep](https://github.com/BurntSushi/ripgrep#installation) — used by Telescope's `find_files`/`live_grep`
+- [tree-sitter CLI](https://github.com/tree-sitter/tree-sitter/blob/master/crates/cli/README.md) (v0.26.1+, installed via a package manager, **not npm**) — required by `nvim-treesitter` to build parsers
+- A C compiler (e.g. `gcc`/`clang`) and `make` — needed to build `telescope-fzf-native.nvim`, and used by the tree-sitter CLI itself when building parsers
+- [Node.js](https://nodejs.org/) (with `npm`) — required by most Mason-installed LSP servers and by GitHub Copilot's agent
+- A [Nerd Font](https://www.nerdfonts.com/) — needed for icons (`nvim-web-devicons`, used by barbar, lualine, neo-tree, nvim-cmp)
+- A GitHub Copilot subscription — run `:Copilot setup` on first use to authenticate
+
+### PHP debugging (optional)
+
+To debug PHP with `nvim-dap`:
+1. Install the Xdebug PHP extension and enable it in your project's `php.ini`.
+2. Run `:MasonInstall php-debug-adapter` once — unlike other Mason tools in
+   this config, it isn't in the `ensure_installed` list, so it won't install
+   automatically.
 
 ## ⚒️ Plugins
 
@@ -27,14 +63,31 @@ These packages are required to installed on your OS for other used plugins:
 | `tpope/vim-fugitive`                    | [https://github.com/tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)                                   |
 | `sindrets/diffview.nvim`                | [https://github.com/sindrets/diffview.nvim](https://github.com/sindrets/diffview.nvim)                           |
 | `lewis6991/gitsigns.nvim`               | [https://github.com/lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                         |
+| `editorconfig/editorconfig-vim`         | [https://github.com/editorconfig/editorconfig-vim](https://github.com/editorconfig/editorconfig-vim)             |
+| `numToStr/Comment.nvim`                 | [https://github.com/numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim)                             |
+| `wuelnerdotexe/vim-astro`               | [https://github.com/wuelnerdotexe/vim-astro](https://github.com/wuelnerdotexe/vim-astro)                         |
+| Completion                              |                                                                                                                  |
+| `hrsh7th/nvim-cmp`                      | [https://github.com/hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)                                       |
+| AI                                      |                                                                                                                  |
+| `github/copilot.vim`                    | [https://github.com/github/copilot.vim](https://github.com/github/copilot.vim)                                   |
+| `CopilotC-Nvim/CopilotChat.nvim`        | [https://github.com/CopilotC-Nvim/CopilotChat.nvim](https://github.com/CopilotC-Nvim/CopilotChat.nvim)           |
+| Debugging                               |                                                                                                                  |
+| `mfussenegger/nvim-dap`                 | [https://github.com/mfussenegger/nvim-dap](https://github.com/mfussenegger/nvim-dap)                             |
+| Testing                                 |                                                                                                                  |
+| `nvim-neotest/neotest`                  | [https://github.com/nvim-neotest/neotest](https://github.com/nvim-neotest/neotest)                               |
+| Laravel / PHP                           |                                                                                                                  |
+| `adalessa/laravel.nvim`                 | [https://github.com/adalessa/laravel.nvim](https://github.com/adalessa/laravel.nvim)                             |
+| `gbprod/phpactor.nvim`                  | [https://github.com/gbprod/phpactor.nvim](https://github.com/gbprod/phpactor.nvim)                               |
+| `ricardoramirezr/blade-nav.nvim`        | [https://github.com/ricardoramirezr/blade-nav.nvim](https://github.com/ricardoramirezr/blade-nav.nvim)           |
 | Formating/Linting                       |                                                                                                                  |
 | `stevearc/conform.nvim`                 | [https://github.com/stevearc/conform.nvim](https://github.com/stevearc/conform.nvim)                             |
 | `mfussenegger/nvim-lint`                | [https://github.com/mfussenegger/nvim-lint](https://github.com/mfussenegger/nvim-lint)                           |
 | `junegunn/vim-easy-align`               | [https://github.com/junegunn/vim-easy-align](https://github.com/junegunn/vim-easy-align)                         |
 | Diagnostics                             |                                                                                                                  |
 | `folke/trouble.nvim`                    | [https://github.com/folke/trouble.nvim](https://github.com/folke/trouble.nvim)                                   |
+| `rachartier/tiny-inline-diagnostic.nvim`| [https://github.com/rachartier/tiny-inline-diagnostic.nvim](https://github.com/rachartier/tiny-inline-diagnostic.nvim) |
 | LSP Plugins                             |                                                                                                                  |
-| `williamboman/mason.nvim`               | [https://github.com/williamboman/mason.nvim](https://github.com/williamboman/mason.nvim)                         |
+| `mason-org/mason.nvim`                  | [https://github.com/mason-org/mason.nvim](https://github.com/mason-org/mason.nvim)                               |
 | `neovim/nvim-lspconfig`                 | [https://github.com/neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)                             |
 | `nvim-treesitter/nvim-treesitter`       | [https://github.com/nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)         |
 
@@ -43,9 +96,9 @@ These packages are required to installed on your OS for other used plugins:
 
 https://github.com/catppuccin/nvim
 
-Flavour: Mocha
+Flavour: Macchiato
 
-If you are using tmux, the color scheme doens't show properly.
+If you are using tmux, the color scheme doesn't show properly.
 To enable the theme schema set the following config in your `.tmux.conf`.
 
 **~/.tmux.conf**
@@ -56,11 +109,12 @@ set -as terminal-overrides ',xterm*:Tc:sitm=\E[3m'
 
 ## Treesitter
 
-### Laravel Blade
-
-```sh
-:TSInstall blade
-```
+Parsers for `lua, rust, go, bash, php, blade, astro, css, dockerfile, html,
+json, yaml, scss, typescript, vue, svelte, json5, javascript` install
+automatically the first time you open this config (and lazy.nvim's
+`:TSUpdate` build hook keeps them updated). Opening any other filetype also
+auto-installs its parser on first use. Manual `:TSInstall <lang>` is only
+needed if you want a parser that isn't in that list yet.
 
 ## ⌨️ Commands
 
@@ -78,6 +132,12 @@ set -as terminal-overrides ',xterm*:Tc:sitm=\E[3m'
 |                     |                                                          |
 | `SPACE` + `ss`      | Split editor horizontally                                |
 | `SPACE` + `sv`      | Split editor vertically                                  |
+| `SPACE` + `n`       | New buffer                                               |
+| `SPACE` + `vl`      | Enter visual block mode                                  |
+| `SPACE` + `fo`      | Fold selection (visual mode)                             |
+| `SPACE` + `fO`      | Open fold under cursor                                   |
+| `SPACE` + `y`       | Yank to system clipboard (normal/visual mode)             |
+| `SPACE` + `Y`       | Yank line to system clipboard                            |
 |                     |                                                          |
 | `CTRL` + `h`        | Move navigation focus to left                            |
 | `CTRL` + `j`        | Move navigation focus up                                 |
@@ -99,7 +159,7 @@ set -as terminal-overrides ',xterm*:Tc:sitm=\E[3m'
 | Command             | Description                                              |
 | ------------------- | -------------------------------------------------------- |
 | `SPACE` + `SPACE`   | Show file search                                         |
-| `SPACE` + `lg`      | Live grep search                                         |
+| `SPACE` + `tg`      | Live grep search                                         |
 | `SPACE` + `,`       | Show all buffers                                         |
 | `SPACE` + `gb`      | Show git branches                                        |
 | `SPACE` + `th`      | Show help tags                                           |
@@ -110,6 +170,7 @@ set -as terminal-overrides ',xterm*:Tc:sitm=\E[3m'
 | Command             | Description                                              |
 | ------------------- | -------------------------------------------------------- |
 | `SPACE` + `fa`      | Action for easy align                                    |
+| `SPACE` + `ft`      | Align on custom character (visual mode)                  |
 
 
 ### Barbar keymaps
@@ -130,7 +191,7 @@ set -as terminal-overrides ',xterm*:Tc:sitm=\E[3m'
 | `ALT` + `0`         | Go to the last tab                                       |
 |                     |                                                          |
 | `ALT` + `p`         | Pin current tab                                          |
-| `ALT` + `w`         | Close current buffer tab                                 |
+| `CTRL` + `w`        | Close current buffer tab                                 |
 | `ALT` + `W`         | Close **all** buffer tabs                                |
 | `ALT` + `o`         | Pick tab buffer                                          |
 
@@ -145,3 +206,75 @@ set -as terminal-overrides ',xterm*:Tc:sitm=\E[3m'
 | `SPACE` + `gP`      | Git push                                                 |
 | `SPACE` + `lg`      | Open LazyGit                                             |
 | `SPACE` + `gh`      | Open diffview history                                    |
+
+### LSP keymaps
+
+| Command             | Description                                              |
+| ------------------- | -------------------------------------------------------- |
+| `gR`                | Show LSP references                                      |
+| `gD`                | Go to declaration                                        |
+| `gd`                | Show LSP definitions                                     |
+| `gi`                | Show LSP implementations                                 |
+| `gt`                | Show LSP type definitions                                |
+| `SPACE` + `ca`      | Code action                                              |
+| `SPACE` + `rn`      | Smart rename                                             |
+| `SPACE` + `D`       | Show buffer diagnostics                                  |
+| `SPACE` + `d`       | Show line diagnostics                                    |
+| `[d`                | Go to previous diagnostic                                |
+| `]d`                | Go to next diagnostic                                    |
+| `K`                 | Show hover documentation                                 |
+| `SPACE` + `rs`      | Restart LSP                                              |
+| `CTRL` + `k`        | Show signature help                                      |
+
+### Trouble keymaps
+
+| Command             | Description                                              |
+| ------------------- | -------------------------------------------------------- |
+| `SPACE` + `xw`      | Toggle workspace diagnostics                             |
+| `SPACE` + `xd`      | Toggle buffer diagnostics                                |
+| `SPACE` + `xq`      | Toggle quickfix list                                     |
+| `SPACE` + `xl`      | Toggle location list                                     |
+| `SPACE` + `xt`      | Toggle todos                                             |
+
+### Debugger (DAP) keymaps
+
+| Command             | Description                                              |
+| ------------------- | -------------------------------------------------------- |
+| `SPACE` + `db`      | Toggle breakpoint                                        |
+| `SPACE` + `duc`     | Close DAP UI                                             |
+| `F1`                | Continue                                                 |
+| `F2`                | Step into                                                |
+| `F3`                | Step over                                                |
+| `F4`                | Step out                                                 |
+| `F5`                | Step back                                                |
+| `F6`                | Restart                                                  |
+
+### Testing (Neotest) keymaps
+
+| Command             | Description                                              |
+| ------------------- | -------------------------------------------------------- |
+| `SPACE` + `tr`      | Run tests in current file                                |
+| `SPACE` + `tn`      | Run nearest test                                         |
+| `SPACE` + `ti`      | Toggle test summary                                      |
+| `SPACE` + `ts`      | Run last test                                            |
+
+### CopilotChat keymaps
+
+| Command             | Description                                              |
+| ------------------- | -------------------------------------------------------- |
+| `SPACE` + `cc`      | Toggle Copilot chat                                      |
+| `SPACE` + `cg`      | Generate commit message                                  |
+| `SPACE` + `ca`      | Generate commit message (same as `SPACE` + `cg`)         |
+| `TAB`               | Accept suggestion (insert mode, Copilot chat buffers)    |
+
+### Notification keymaps
+
+| Command             | Description                                              |
+| ------------------- | -------------------------------------------------------- |
+| `SPACE` + `nd`      | Dismiss all notifications                                |
+
+### Linting keymaps
+
+| Command             | Description                                              |
+| ------------------- | -------------------------------------------------------- |
+| `SPACE` + `l`       | Trigger linting for current file                         |
