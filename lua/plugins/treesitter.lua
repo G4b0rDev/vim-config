@@ -3,43 +3,49 @@ return {
   build = ":TSUpdate",
   branch = "main",
   config = function()
-    local configs = require("nvim-treesitter.config")
+    local ts = require("nvim-treesitter")
 
-    configs.setup({
-      ensure_installed = {
-        "lua",
-        "rust",
-        "go",
-        "bash",
-        "php",
-        "blade",
-        "astro",
-        "css",
-        "dockerfile",
-        "html",
-        "json",
-        "yaml",
-        "scss",
-        "typescript",
-        "vue",
-        "svelte",
-        "json5",
-        "javascript",
-      },
-      sync_install = false,
-      auto_install = true,
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-      },
-      -- indent = { enable = true },
-      -- autotag = { enable = true },
-    })
+    local parsers = {
+      "lua",
+      "rust",
+      "go",
+      "bash",
+      "php",
+      "blade",
+      "astro",
+      "css",
+      "dockerfile",
+      "html",
+      "json",
+      "yaml",
+      "scss",
+      "typescript",
+      "vue",
+      "svelte",
+      "json5",
+      "javascript",
+    }
+
+    ts.install(parsers)
 
     vim.api.nvim_create_autocmd("FileType", {
       pattern = { "svelte", "vue", "blade", "html", "javascript", "php" },
       callback = function()
         vim.treesitter.start()
+      end,
+    })
+
+    -- Replaces the legacy (now removed) `auto_install` option: install the
+    -- parser for any other filetype the first time it's opened.
+    vim.api.nvim_create_autocmd("FileType", {
+      callback = function(args)
+        local lang = vim.treesitter.language.get_lang(vim.bo[args.buf].filetype)
+        if not lang or vim.list_contains(ts.get_installed("parsers"), lang) then
+          return
+        end
+        if vim.list_contains(ts.get_available(), lang) then
+          ts.install({ lang })
+        end
       end,
     })
   end,
